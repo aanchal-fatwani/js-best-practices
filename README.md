@@ -6,6 +6,7 @@
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [Avoid Global Variables](#avoid-global-variables)                                         |
 | 2   | [Always Declare Local Variables](#always-declare-local-variables)                                         |
+| 3   | [Declarations on Top](#declarations-on-top)                                         |
 
 1. ### Avoid Global Variables
 
@@ -24,5 +25,18 @@
     All variables used in a function should be declared as local variables.
     
     Local variables must be declared with the var, the let, or the const keyword, otherwise they will become global variables.
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+3. ### Declarations on Top
+
+    It is a good coding practice to put all declarations at the top of each script or function.
+
+    This will:
+
+    - Give cleaner code
+    - Provide a single place to look for local variables
+    - Make it easier to avoid unwanted (implied) global variables
+    - Reduce the possibility of unwanted re-declarations
 
       **[⬆ Back to Top](#table-of-contents)**
