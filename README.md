@@ -7,6 +7,7 @@
 | 1   | [Avoid Global Variables](#avoid-global-variables)                                         |
 | 2   | [Always Declare Local Variables](#always-declare-local-variables)                                         |
 | 3   | [Declarations on Top](#declarations-on-top)                                         |
+| 4   | [Initialize Variables](#initialize-variables)                                         |
 
 1. ### Avoid Global Variables
 
@@ -38,5 +39,17 @@
     - Provide a single place to look for local variables
     - Make it easier to avoid unwanted (implied) global variables
     - Reduce the possibility of unwanted re-declarations
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+4. ### Initialize Variables
+
+        It is a good coding practice to initialize variables when you declare them.
+
+        This will:
+
+      - Give cleaner code
+      - Provide a single place to initialize variables
+      - Avoid undefined values
 
       **[⬆ Back to Top](#table-of-contents)**
