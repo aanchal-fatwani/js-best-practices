@@ -44,9 +44,9 @@
       
 4. ### Initialize Variables
 
-        It is a good coding practice to initialize variables when you declare them.
+     It is a good coding practice to initialize variables when you declare them.
 
-        This will:
+     This will:
 
       - Give cleaner code
       - Provide a single place to initialize variables
