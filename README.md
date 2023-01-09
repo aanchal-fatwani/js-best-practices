@@ -8,6 +8,7 @@
 | 2   | [Always Declare Local Variables](#always-declare-local-variables)                                         |
 | 3   | [Declarations on Top](#declarations-on-top)                                         |
 | 4   | [Initialize Variables](#initialize-variables)                                         |
+| 5   | [Declare Objects with const](#declare-objects-with-const)                                         |
 
 1. ### Avoid Global Variables
 
@@ -51,5 +52,10 @@
       - Give cleaner code
       - Provide a single place to initialize variables
       - Avoid undefined values
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+5. ### Declare Objects with const
+      Declaring objects with const will prevent any accidental change.
 
       **[⬆ Back to Top](#table-of-contents)**
