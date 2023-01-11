@@ -10,6 +10,7 @@
 | 4   | [Initialize Variables](#initialize-variables)                                         |
 | 5   | [Declare Objects with const](#declare-objects-with-const)                                         |
 | 6   | [Declare Arrays with const](#declare-arrays-with-const)                                         |
+| 6   | [Don't Use new Object](#don't-use-new-object)                                         |
 
 1. ### Avoid Global Variables
 
@@ -63,5 +64,16 @@
 
 6. ### Declare Arrays with const
     Declaring arrays with const will prevent any accidential change.
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+7. ### Don't Use new Object
+    - Use "" instead of new String()
+    - Use 0 instead of new Number()
+    - Use false instead of new Boolean()
+    - Use {} instead of new Object()
+    - Use [] instead of new Array()
+    - Use /()/ instead of new RegExp()
+    - Use function (){} instead of new Function()
 
       **[⬆ Back to Top](#table-of-contents)**
