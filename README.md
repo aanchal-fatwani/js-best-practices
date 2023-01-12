@@ -10,7 +10,7 @@
 | 4   | [Initialize Variables](#initialize-variables)                                         |
 | 5   | [Declare Objects with const](#declare-objects-with-const)                                         |
 | 6   | [Declare Arrays with const](#declare-arrays-with-const)                                         |
-| 6   | [Don't Use new Object](#don't-use-new-object)                                         |
+| 7   | [Don't Use new Object](#dont-use-new-object)                                         |
 
 1. ### Avoid Global Variables
 
