@@ -11,6 +11,7 @@
 | 5   | [Declare Objects with const](#declare-objects-with-const)                                         |
 | 6   | [Declare Arrays with const](#declare-arrays-with-const)                                         |
 | 7   | [Don't Use new Object](#dont-use-new-object)                                         |
+| 8   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
 
 1. ### Avoid Global Variables
 
@@ -75,5 +76,14 @@
     - Use [] instead of new Array()
     - Use /()/ instead of new RegExp()
     - Use function (){} instead of new Function()
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+8. ### Beware of Automatic Type Conversions
+    - JavaScript is loosely typed.
+
+    - A variable can contain all data types.
+
+    - A variable can change its data type:
 
       **[⬆ Back to Top](#table-of-contents)**
