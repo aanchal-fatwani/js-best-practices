@@ -12,6 +12,7 @@
 | 6   | [Declare Arrays with const](#declare-arrays-with-const)                                         |
 | 7   | [Don't Use new Object](#dont-use-new-object)                                         |
 | 8   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
+| 9   | [Use === Comparison](#use-comparison)                                         |
 
 1. ### Avoid Global Variables
 
@@ -85,5 +86,12 @@
     - A variable can contain all data types.
 
     - A variable can change its data type:
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+9. ### Use === Comparison
+    The == comparison operator always converts (to matching types) before comparison.
+
+    The === operator forces comparison of values and type:
 
       **[⬆ Back to Top](#table-of-contents)**
