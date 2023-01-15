@@ -12,7 +12,7 @@
 | 6   | [Declare Arrays with const](#declare-arrays-with-const)                                         |
 | 7   | [Don't Use new Object](#dont-use-new-object)                                         |
 | 8   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
-| 9   | [Use === Comparison](#use-comparison)                                         |
+| 9   | [Use === Comparison](#use--comparison)                                         |
 
 1. ### Avoid Global Variables
 
