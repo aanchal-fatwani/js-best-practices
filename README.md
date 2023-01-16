@@ -13,6 +13,7 @@
 | 7   | [Don't Use new Object](#dont-use-new-object)                                         |
 | 8   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
 | 9   | [Use === Comparison](#use--comparison)                                         |
+| 10   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
 
 1. ### Avoid Global Variables
 
@@ -93,5 +94,12 @@
     The == comparison operator always converts (to matching types) before comparison.
 
     The === operator forces comparison of values and type:
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+10. ### Use Parameter Defaults
+    If a function is called with a missing argument, the value of the missing argument is set to undefined.
+
+    Undefined values can break your code. It is a good habit to assign default values to arguments.
 
       **[⬆ Back to Top](#table-of-contents)**
