@@ -14,6 +14,7 @@
 | 8   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
 | 9   | [Use === Comparison](#use--comparison)                                         |
 | 10   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
+| 11   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
 
 1. ### Avoid Global Variables
 
@@ -101,5 +102,10 @@
     If a function is called with a missing argument, the value of the missing argument is set to undefined.
 
     Undefined values can break your code. It is a good habit to assign default values to arguments.
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+11. ### End Your Switches with Defaults
+    Always end your switch statements with a default. Even if you think there is no need for it.
 
       **[⬆ Back to Top](#table-of-contents)**
