@@ -15,6 +15,7 @@
 | 9   | [Use === Comparison](#use--comparison)                                         |
 | 10   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
 | 11   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
+| 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
 
 1. ### Avoid Global Variables
 
@@ -107,5 +108,13 @@
       
 11. ### End Your Switches with Defaults
     Always end your switch statements with a default. Even if you think there is no need for it.
+
+      **[⬆ Back to Top](#table-of-contents)**
+      
+12. ### Avoid Number, String, and Boolean as Objects
+    Always treat numbers, strings, or booleans as primitive values. Not as objects.
+
+    Declaring these types as objects, slows down execution speed, and produces nasty side effects:
+
 
       **[⬆ Back to Top](#table-of-contents)**
