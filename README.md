@@ -16,6 +16,7 @@
 | 10   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
 | 11   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
 | 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
+| 13   | [Avoid Using eval](#avoid-using-eval)                                         |
 
 1. ### Avoid Global Variables
 
@@ -116,5 +117,18 @@
 
     Declaring these types as objects, slows down execution speed, and produces nasty side effects:
 
+
+      **[⬆ Back to Top](#table-of-contents)**
+12. ### Avoid Number, String, and Boolean as Objects
+    Always treat numbers, strings, or booleans as primitive values. Not as objects.
+
+    Declaring these types as objects, slows down execution speed, and produces nasty side effects:
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+12. ### Avoid Using eval()
+    The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
+
+    Because it allows arbitrary code to be run, it also represents a security problem.
 
       **[⬆ Back to Top](#table-of-contents)**
