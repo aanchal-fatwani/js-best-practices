@@ -26,7 +26,7 @@
 
     Global variables and functions can be overwritten by other scripts.
 
-    Use local variables instead, and learn how to use closures.
+    Use local variables or closures instead.
 
       **[⬆ Back to Top](#table-of-contents)**
 
@@ -34,17 +34,15 @@
 
     All variables used in a function should be declared as local variables.
     
-    Local variables must be declared with the var, the let, or the const keyword, otherwise they will become global variables.
+    Local variables must be declared with the let or const keyword, otherwise they will become global variables.
 
       **[⬆ Back to Top](#table-of-contents)**
       
 3. ### Declarations on Top
 
-    It is a good coding practice to put all declarations at the top of each script or function.
+    All declarations should be at the top of each script or function.
 
     This will:
-
-    - Give cleaner code
     - Provide a single place to look for local variables
     - Make it easier to avoid unwanted (implied) global variables
     - Reduce the possibility of unwanted re-declarations
@@ -53,11 +51,9 @@
       
 4. ### Initialize Variables
 
-     It is a good coding practice to initialize variables when you declare them.
+     All variables should be initialized at the time of declaration.
 
      This will:
-
-      - Give cleaner code
       - Provide a single place to initialize variables
       - Avoid undefined values
 
@@ -69,7 +65,7 @@
       **[⬆ Back to Top](#table-of-contents)**
 
 6. ### Declare Arrays with const
-    Declaring arrays with const will prevent any accidential change.
+    Declaring arrays with const will prevent any accidental change.
 
       **[⬆ Back to Top](#table-of-contents)**
 
