@@ -76,16 +76,19 @@
     - Use {} instead of new Object()
     - Use [] instead of new Array()
     - Use /()/ instead of new RegExp()
-    - Use function (){} instead of new Function()
+    - Use function(){} instead of new Function()
 
       **[⬆ Back to Top](#table-of-contents)**
       
 8. ### Beware of Automatic Type Conversions
     - JavaScript is loosely typed.
-
-    - A variable can contain all data types.
+    A variable can contain all data types.
 
     - A variable can change its data type:
+    Beware that numbers can accidentally be converted to strings or NaN (Not a Number).
+
+    - When doing mathematical operations, JavaScript can convert numbers to strings:
+    Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
 
       **[⬆ Back to Top](#table-of-contents)**
       
