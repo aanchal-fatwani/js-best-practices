@@ -88,7 +88,7 @@
     Beware that numbers can accidentally be converted to strings or NaN (Not a Number).
 
     - When doing mathematical operations, JavaScript can convert numbers to strings:
-    Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
+    Subtracting a string from a string, does not generate an error but returns NaN (Not a Number).
 
       **[⬆ Back to Top](#table-of-contents)**
       
@@ -112,7 +112,7 @@
 12. ### Avoid Number, String, and Boolean as Objects
     Always treat numbers, strings, or booleans as primitive values. Not as objects.
 
-    Declaring these types as objects, slows down execution speed, and produces nasty side effects:
+    Declaring these types as objects, slows down execution speed, and produces nasty side effects.
 
       **[⬆ Back to Top](#table-of-contents)**
       
