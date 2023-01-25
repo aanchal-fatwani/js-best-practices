@@ -17,6 +17,7 @@
 | 11   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
 | 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
 | 13   | [Avoid Using eval](#avoid-using-eval)                                         |
+| 14   | [Call things by their name](#call-things-by-their-name)                                         |
 
 1. ### Avoid Global Variables
 
@@ -120,5 +121,10 @@
     The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
 
     Because it allows arbitrary code to be run, it also represents a security problem.
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+14. ### Call things by their name
+    Good variable and function names should be easy to understand and tell you what is going on — not more and not less. 
 
       **[⬆ Back to Top](#table-of-contents)**
