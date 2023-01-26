@@ -18,6 +18,7 @@
 | 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
 | 13   | [Avoid Using eval](#avoid-using-eval)                                         |
 | 14   | [Call things by their name](#call-things-by-their-name)                                         |
+| 14   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
 
 1. ### Avoid Global Variables
 
@@ -126,5 +127,12 @@
 
 14. ### Call things by their name
     Good variable and function names should be easy to understand and tell you what is going on — not more and not less. 
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+15. ### Stick to a strict coding style
+    Clean and valid code means less confusing bugs to fix, easier handover to other developers and better code security. When you rely on hacks to get your code to work it is likely that there is also a security exploit that uses the same hacks. In addition, as hacks get fixed in browsers, your code will cease to work in the next version of the browser.
+
+    Valid code also means that it can be converted by scripts to other formats — hacky code will need a human to do that.
 
       **[⬆ Back to Top](#table-of-contents)**
