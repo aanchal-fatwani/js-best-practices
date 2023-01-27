@@ -18,7 +18,8 @@
 | 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
 | 13   | [Avoid Using eval](#avoid-using-eval)                                         |
 | 14   | [Call things by their name](#call-things-by-their-name)                                         |
-| 14   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
+| 15   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
+| 16   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 
 1. ### Avoid Global Variables
 
@@ -134,5 +135,12 @@
     Clean and valid code means less confusing bugs to fix, easier handover to other developers and better code security. When you rely on hacks to get your code to work it is likely that there is also a security exploit that uses the same hacks. In addition, as hacks get fixed in browsers, your code will cease to work in the next version of the browser.
 
     Valid code also means that it can be converted by scripts to other formats — hacky code will need a human to do that.
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+16. ### Comment as much as needed but not more
+    Comments are your messages to other developers (and yourself, if you come back to your code after several months working on something else). There’s been numerous battles raging over the years about whether to use comments at all, the main argument being that good code should explain itself.
+
+    Again the trick is moderation. Comment when there is an important thing to say, and if you do comment use the /* */ notation. Single line comments using // can be problematic if people minify your code without stripping comments and in general are less versatile.
 
       **[⬆ Back to Top](#table-of-contents)**
