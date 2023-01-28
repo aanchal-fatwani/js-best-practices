@@ -20,6 +20,7 @@
 | 14   | [Call things by their name](#call-things-by-their-name)                                         |
 | 15   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
 | 16   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
+| 17   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 
 1. ### Avoid Global Variables
 
@@ -144,3 +145,10 @@
     Again the trick is moderation. Comment when there is an important thing to say, and if you do comment use the /* */ notation. Single line comments using // can be problematic if people minify your code without stripping comments and in general are less versatile.
 
       **[⬆ Back to Top](#table-of-contents)**
+
+17. ### Avoid mixing CSS or styling with other technologies
+    Whilst it is possible to create everything you need in a document using JavaScript, CSS and manipulating the DOM, it is not necessarily the most effective way of doing so. 
+    
+    Adding the code to put a red border around every input field when its class is “mandatory” and there’s nothing in it through Javascript is possible, however it means that if you later need to make a change to these styles you need to go through the JavaScript and apply the changes there. By adding a class called “error” to the element when there is an error, you can ensure that the styling information is kept inside the CSS, which is more appropriate.
+
+     **[⬆ Back to Top](#table-of-contents)**
