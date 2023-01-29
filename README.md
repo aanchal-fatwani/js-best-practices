@@ -21,6 +21,7 @@
 | 15   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
 | 16   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 | 17   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
+| 18   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
 
 1. ### Avoid Global Variables
 
@@ -151,4 +152,13 @@
     
     Adding the code to put a red border around every input field when its class is “mandatory” and there’s nothing in it through Javascript is possible, however it means that if you later need to make a change to these styles you need to go through the JavaScript and apply the changes there. By adding a class called “error” to the element when there is an error, you can ensure that the styling information is kept inside the CSS, which is more appropriate.
 
+     **[⬆ Back to Top](#table-of-contents)**
+
+18. ### Use shortcut notation when it makes sense
+    Instead of repeating the object name for each property or method and assigning values through '.', make use of object literal and assign values through '{}'.
+    
+    Conditions can be shortened using “ternary notation”. Anything before the question mark is the condition, the value immediately after it is the true case and the one after the colon the false case. Ternary notation can be nested, but I’d avoid that to keep things readable.
+    
+    Another common situation in JavaScript is providing a preset value for a variable if it is not defined through '||' the double pipe character. For eg. x || 5 will capture value of x if x is present, otherwise it will take 5.
+    
      **[⬆ Back to Top](#table-of-contents)**
