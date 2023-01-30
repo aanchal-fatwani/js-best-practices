@@ -22,6 +22,7 @@
 | 16   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 | 17   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 | 18   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
+| 19   | [Modularize — one function per task](#modularize-—-one-function-per-task)                                         |
 
 1. ### Avoid Global Variables
 
@@ -160,5 +161,12 @@
     Conditions can be shortened using “ternary notation”. Anything before the question mark is the condition, the value immediately after it is the true case and the one after the colon the false case. Ternary notation can be nested, but I’d avoid that to keep things readable.
     
     Another common situation in JavaScript is providing a preset value for a variable if it is not defined through '||' the double pipe character. For eg. x || 5 will capture value of x if x is present, otherwise it will take 5.
+    
+     **[⬆ Back to Top](#table-of-contents)**
+
+19. ### Modularize — one function per task
+    Create functions that fulfill one job at a time which makes it easy for other developers to debug and change the code without having to scan through all the code to work out what code block performs what function.
+
+    This also applies to creating helper functions for common tasks. If you find yourself doing the same thing in several different functions then it is a good idea to create a more generic helper function instead, and reuse that functionality where it is needed.
     
      **[⬆ Back to Top](#table-of-contents)**
