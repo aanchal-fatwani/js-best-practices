@@ -23,6 +23,7 @@
 | 17   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 | 18   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
 | 19   | [Modularize — one function per task](#modularize-—-one-function-per-task)                                         |
+| 20   | [Enhance progressively](#enhance-progressively)                                         |
 
 1. ### Avoid Global Variables
 
@@ -170,3 +171,8 @@
     This also applies to creating helper functions for common tasks. If you find yourself doing the same thing in several different functions then it is a good idea to create a more generic helper function instead, and reuse that functionality where it is needed.
     
      **[⬆ Back to Top](#table-of-contents)**
+
+20. ### Enhance progressively
+    Write code that works regardless of available technology. In the case of JavaScript, this means that when scripting is not available (say on a BlackBerry, or because of an over-zealous security policy) your web products should still allow users to reach a certain goal, not block them because of the lack of JavaScript which they can’t turn on, or don’t want to.
+
+    **[⬆ Back to Top](#table-of-contents)**
