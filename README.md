@@ -22,7 +22,7 @@
 | 16   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 | 17   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 | 18   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
-| 19   | [Modularize — one function per task](#modularize-—-one-function-per-task)                                         |
+| 19   | [Modularize — one function per task](#modularize--one-function-per-task)                                         |
 | 20   | [Enhance progressively](#enhance-progressively)                                         |
 
 1. ### Avoid Global Variables
