@@ -24,6 +24,7 @@
 | 18   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
 | 19   | [Modularize — one function per task](#modularize--one-function-per-task)                                         |
 | 20   | [Enhance progressively](#enhance-progressively)                                         |
+| 21   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 
 1. ### Avoid Global Variables
 
@@ -175,4 +176,11 @@
 20. ### Enhance progressively
     Write code that works regardless of available technology. In the case of JavaScript, this means that when scripting is not available (say on a BlackBerry, or because of an over-zealous security policy) your web products should still allow users to reach a certain goal, not block them because of the lack of JavaScript which they can’t turn on, or don’t want to.
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+21. ### Allow for configuration and translation
+    To keep your code maintainable and clean is to create a configuration object that contains all the things that are likely to change over time. These include any text used in elements you create (including button values and alternative text for images), CSS class and ID names and general parameters of the interface you build.
+
+    It is of utmost importance to keep code maintenance simple, avoiding the need for future maintainers having to read all your code and find where they need to change things. 
+    
     **[⬆ Back to Top](#table-of-contents)**
