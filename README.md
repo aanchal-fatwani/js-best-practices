@@ -25,6 +25,7 @@
 | 19   | [Modularize — one function per task](#modularize--one-function-per-task)                                         |
 | 20   | [Enhance progressively](#enhance-progressively)                                         |
 | 21   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
+| 22   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
 
 1. ### Avoid Global Variables
 
@@ -183,4 +184,13 @@
 
     It is of utmost importance to keep code maintenance simple, avoiding the need for future maintainers having to read all your code and find where they need to change things. 
     
+    **[⬆ Back to Top](#table-of-contents)**
+
+22. ### Avoid heavy nesting
+    Nesting code explains its logic and makes it much easier to read, however nesting it too far can also make it hard to follow what you are trying to do. Readers of your code shouldn’t have to scroll horizontally, or suffer confusion when their code editors wrap long lines (this makes your indentation efforts moot anyway).
+
+The other problem of nesting is variable names and loops. As you normally start your first loop with i as the iterator variable, you’ll go on with j,k,l and so on. This can become messy quite quickly.
+
+    In case of using the generic — really throw-away — variable names ul and li here, I might nestedul and datali for the nested list items. If the list nesting were to go even deeper I would need more variable names, and so on and so on. It makes more sense to put the task of creating nested lists for each member in its own function and call this with the right data. This also prevents us from having a loop inside a loop. Something like the addMemberData() function is pretty generic and is very likely to come in handy at another time.
+  
     **[⬆ Back to Top](#table-of-contents)**
