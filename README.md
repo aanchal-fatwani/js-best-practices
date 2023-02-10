@@ -26,6 +26,7 @@
 | 20   | [Enhance progressively](#enhance-progressively)                                         |
 | 21   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 | 22   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
+| 23   | [Optimize loops](#optimize-loops)                                         |
 
 1. ### Avoid Global Variables
 
@@ -192,5 +193,19 @@
 The other problem of nesting is variable names and loops. As you normally start your first loop with i as the iterator variable, you’ll go on with j,k,l and so on. This can become messy quite quickly.
 
     In case of using the generic — really throw-away — variable names ul and li here, I might nestedul and datali for the nested list items. If the list nesting were to go even deeper I would need more variable names, and so on and so on. It makes more sense to put the task of creating nested lists for each member in its own function and call this with the right data. This also prevents us from having a loop inside a loop. Something like the addMemberData() function is pretty generic and is very likely to come in handy at another time.
+  
+    **[⬆ Back to Top](#table-of-contents)**
+
+23. ### Optimize loops
+    Loops can become very slow if you don’t do them right. One of the most common mistake is to read the length attribute of an array at every iteration, such as
+    for(var i=0;i<names.length;i++)
+    
+    This means that every time the loop runs, JavaScript needs to read the length of the array. You can avoid that by storing the length value in a different           variable
+    var all = names.length; for(var i=0;i<all;i++)
+    
+    An even shorter way of achieving this is to create a second variable in the pre-loop statement
+    for(var i=0,j=names.length;i<j;i++)
+    
+    Another thing to ensure is that you keep computation-heavy code outside loops. This includes regular expressions and — more importantly — DOM manipulation. You can create the DOM nodes in the loop but avoid inserting them into the document. You’ll find more on DOM best practices in the next section.
   
     **[⬆ Back to Top](#table-of-contents)**
