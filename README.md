@@ -27,6 +27,7 @@
 | 21   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 | 22   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
 | 23   | [Optimize loops](#optimize-loops)                                         |
+| 24   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
 
 1. ### Avoid Global Variables
 
@@ -208,4 +209,11 @@ The other problem of nesting is variable names and loops. As you normally start 
     
     Another thing to ensure is that you keep computation-heavy code outside loops. This includes regular expressions and — more importantly — DOM manipulation. You can create the DOM nodes in the loop but avoid inserting them into the document. You’ll find more on DOM best practices in the next section.
   
+    **[⬆ Back to Top](#table-of-contents)**
+
+24. ### Keep DOM access to a minimum
+    Accessing the DOM in browsers is an expensive thing to do. The DOM is a very complex API and rendering in browsers can take up a lot of time. You can see this when running complex web applications when your computer is already maxed out with other work — changes take longer or get shown half way through and so on.
+
+    To make sure that your code is fast and doesn’t slow down the browser to a halt try to keep DOM access to a bare minimum. Instead of constantly creating and applying elements, have a tool function that turns a string into DOM elements and call this function at the end of your generation process to disturb the browser rendering once rather than continually.
+
     **[⬆ Back to Top](#table-of-contents)**
