@@ -28,6 +28,7 @@
 | 22   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
 | 23   | [Optimize loops](#optimize-loops)                                         |
 | 24   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
+| 25   | [Don’t yield to browser whims](#don’t-yield-to-browser-whims)                                         |
 
 1. ### Avoid Global Variables
 
@@ -215,5 +216,14 @@ The other problem of nesting is variable names and loops. As you normally start 
     Accessing the DOM in browsers is an expensive thing to do. The DOM is a very complex API and rendering in browsers can take up a lot of time. You can see this when running complex web applications when your computer is already maxed out with other work — changes take longer or get shown half way through and so on.
 
     To make sure that your code is fast and doesn’t slow down the browser to a halt try to keep DOM access to a bare minimum. Instead of constantly creating and applying elements, have a tool function that turns a string into DOM elements and call this function at the end of your generation process to disturb the browser rendering once rather than continually.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+25. ### Don’t yield to browser whims
+    Writing code specific to a certain browser is a sure-fire way to keep your code hard to maintain and make it get dated really quickly. If you look around the web you’ll find a lot of scripts that expect a certain browser and stop working as soon as a new version or another browser comes around.
+
+    This is wasted time and effort — we should build code based on agreed standards as outlined in this course of articles, not for one browser. The web is for everybody, not an elite group of users with a state-of-the-art configuration. As the browser market moves quickly you will have to go back to your code and keep fixing it. This is neither effective nor fun.
+
+    If something amazing works in one browser only and you really have to use it, put that code in its own script document and name it with browser and version. This means that you can find and remove this functionality more easily, should this browser become obsolete.
 
     **[⬆ Back to Top](#table-of-contents)**
