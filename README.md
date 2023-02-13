@@ -29,6 +29,7 @@
 | 23   | [Optimize loops](#optimize-loops)                                         |
 | 24   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
 | 25   | [Don’t yield to browser whims](#don’t-yield-to-browser-whims)                                         |
+| 26   | [Don’t trust any data](#don’t-trust-any-data)                                         |
 
 1. ### Avoid Global Variables
 
@@ -225,5 +226,22 @@ The other problem of nesting is variable names and loops. As you normally start 
     This is wasted time and effort — we should build code based on agreed standards as outlined in this course of articles, not for one browser. The web is for everybody, not an elite group of users with a state-of-the-art configuration. As the browser market moves quickly you will have to go back to your code and keep fixing it. This is neither effective nor fun.
 
     If something amazing works in one browser only and you really have to use it, put that code in its own script document and name it with browser and version. This means that you can find and remove this functionality more easily, should this browser become obsolete.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+26. ### Don’t trust any data
+    One of the main points to bear in mind when talking about code and data security is not to trust any data. This is not only about evil people wanting to hack your systems; it starts with plain usability. Users will enter incorrect data, all the time. Not because they are stupid, but because they are busy, distracted or the wording on your instructions is confusing them. For example, Booking a hotel room for a month rather than six days beacuse of entering a wrong number 
+
+    In short, make sure that all the data that goes into your systems is clean and exactly what you need. This is most important on the back end when writing out parameters retrieved from the URL. In JavaScript, it is very important to test the type of parameters sent to your functions (using the typeof keyword). For eg. If the function expects an array as an input, it will still work if you pass string to it, but if were to iterate over elements of array, now it would iterating over characters of the string.
+In order to make this work, you need to check the type of input and make sure it is an array: 
+if(typeof members === 'object' && 
+     typeof members.slice === 'function')
+Arrays are tricky as they tell you they are objects. To ensure that they are arrays, check one of the methods only arrays have.
+
+    Another very insecure practice is to read information from the DOM and use it without comparison. For example, I once had to debug some code that caused the JavaScript functionality to break. The code that caused it was — for some reason beyond me — reading a user name out of the innerHTML from a page element and calling a function with the data as a parameter. As the user name could be any UTF-8 character this included quotation marks and single quotes. These would end any string and the remaining part would be erroneous data. In addition, any user changing the HTML using a tool like Firebug or Opera DragonFly could change the user name to anything and inject this data into your functions.
+
+    The same applies to forms that validate only on the client side. I once signed up for an unavailable email address by rewriting a select to provide another option. As the form wasn’t checked on the back end the process went through without a hitch.
+
+    For DOM access, check that the element you try to reach and alter is really available and what you expect it to be — otherwise your code may fail or cause strange rendering bugs.
 
     **[⬆ Back to Top](#table-of-contents)**
