@@ -30,6 +30,7 @@
 | 24   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
 | 25   | [Don’t yield to browser whims](#don’t-yield-to-browser-whims)                                         |
 | 26   | [Don’t trust any data](#don’t-trust-any-data)                                         |
+| 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-,-don’t-create-too-much-content)                                         |
 
 1. ### Avoid Global Variables
 
@@ -243,5 +244,37 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     The same applies to forms that validate only on the client side. I once signed up for an unavailable email address by rewriting a select to provide another option. As the form wasn’t checked on the back end the process went through without a hitch.
 
     For DOM access, check that the element you try to reach and alter is really available and what you expect it to be — otherwise your code may fail or cause strange rendering bugs.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+27. ### Add functionality with JavaScript, don’t create too much content
+    Building a lot of HTML in JavaScript can be pretty daunting and flaky. Especially on Internet Explorer you can run into all kinds of trouble by altering the document while it is still loading and manipulating the content (look up “operation aborted error” on Google for a tale of woe and misery) with innerHTML.
+
+    In terms of page maintenance it is also a terribly bad idea to create a lot of markup with HTML as not every maintainer will have the same level of skill as you have and could potentially really mess with your code.
+
+    I found that when I had to build an application that is very much dependent on JavaScript using an HTML template and loading this template via Ajax made much more sense. That way maintainers can alter the HTML structure and most importantly text without having to interfere with your JavaScript code. The only snag is to tell them which IDs are needed and if there are certain HTML constructs that need to be in the order you defined. You can do that with inline HTML comments (and then strip the comments out when you load the template. Check the source of the Easy YouTube template as an example.
+
+    For example, defining a script to load the template when the correct HTML container is available and apply the event handlers in the setupContent() method afterwards:
+    if(playercontainer){
+        ajax('template.html');
+    };
+    .
+    .
+    request.onreadystatechange = function(){
+    if(request.readyState == 4){
+      if(request.status){ 
+        if(request.status === 200 || request.status === 304){
+          if(url === 'template.html'){
+            setupPlayer(request.responseText);
+          }
+        }
+      }else{
+        alert('Error: Could not find template...');
+      }
+    }
+  
+    This way people can translate and change the template any way they want to without having to alter the JavaScript code.
+
+
 
     **[⬆ Back to Top](#table-of-contents)**
