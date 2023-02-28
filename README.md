@@ -28,8 +28,8 @@
 | 22   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
 | 23   | [Optimize loops](#optimize-loops)                                         |
 | 24   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
-| 25   | [Don’t yield to browser whims](#don’t-yield-to-browser-whims)                                         |
-| 26   | [Don’t trust any data](#don’t-trust-any-data)                                         |
+| 25   | [Don’t yield to browser whims](#dont-yield-to-browser-whims)                                         |
+| 26   | [Don’t trust any data](#dont-trust-any-data)                                         |
 | 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-,-don’t-create-too-much-content)                                         |
 
 1. ### Avoid Global Variables
