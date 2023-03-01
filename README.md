@@ -30,7 +30,7 @@
 | 24   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
 | 25   | [Don’t yield to browser whims](#dont-yield-to-browser-whims)                                         |
 | 26   | [Don’t trust any data](#dont-trust-any-data)                                         |
-| 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-,-don’t-create-too-much-content)                                         |
+| 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-dont-create-too-much-content)                                         |
 
 1. ### Avoid Global Variables
 
