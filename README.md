@@ -31,7 +31,8 @@
 | 25   | [Don’t yield to browser whims](#dont-yield-to-browser-whims)                                         |
 | 26   | [Don’t trust any data](#dont-trust-any-data)                                         |
 | 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-dont-create-too-much-content)                                         |
-| 27   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
+| 28   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
+| 29   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
 
 1. ### Avoid Global Variables
 
@@ -276,11 +277,16 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
   
     This way people can translate and change the template any way they want to without having to alter the JavaScript code.
 
-
-
     **[⬆ Back to Top](#table-of-contents)**
     
 28. ### Build on the shoulders of giants
     It’s a good idea to learn JavaScript without libraries first, to understand what’s going on, but it is better to make use of a JS library when starting to  develop web sites. There would be less issues to deal with and at least the bugs that appear will be ones that can be reproduced — not random browser issues.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+29. ### Development code is not live code
+    Stop optimizing code for machines rather than other developers. A build script can remove whitespace, comments, replace strings with Array lookups (to avoid MSIE creating a string object for every single instance of a string — even in conditions) and do all the other small tweaks needed to make our JavaScript fly in browsers.
+
+    If we concentrate more on making the initial code easy to understand and extend by other developers we can create the perfect build script. If we keep optimizing prematurely we’ll never get there. Do not build for yourself or the browser — build for the next developer who takes over from you.
 
     **[⬆ Back to Top](#table-of-contents)**
