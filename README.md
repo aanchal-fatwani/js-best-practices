@@ -32,7 +32,7 @@
 | 26   | [Don’t trust any data](#dont-trust-any-data)                                         |
 | 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-dont-create-too-much-content)                                         |
 | 28   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
-| 29   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
+| 29   | [Development code is not live code](#development-code-is-not-live-code)                                         |
 
 1. ### Avoid Global Variables
 
