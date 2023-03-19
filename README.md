@@ -233,9 +233,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 26. ### Don’t trust any data
-    One of the main points to bear in mind when talking about code and data security is not to trust any data. This is not only about evil people wanting to hack your systems; it starts with plain usability. Users will enter incorrect data, all the time. Not because they are stupid, but because they are busy, distracted or the wording on your instructions is confusing them. For example, Booking a hotel room for a month rather than six days beacuse of entering a wrong number 
-
-    In short, make sure that all the data that goes into your systems is clean and exactly what you need. This is most important on the back end when writing out parameters retrieved from the URL. In JavaScript, it is very important to test the type of parameters sent to your functions (using the typeof keyword). For eg. If the function expects an array as an input, it will still work if you pass string to it, but if were to iterate over elements of array, now it would iterating over characters of the string.
+    Make sure that all the data that goes into your systems is clean and exactly what you need. This is most important on the back end when writing out parameters retrieved from the URL. In JavaScript, it is very important to test the type of parameters sent to your functions (using the typeof keyword). For eg. If the function expects an array as an input, it will still work if you pass string to it, but if were to iterate over elements of array, now it would iterating over characters of the string.
 In order to make this work, you need to check the type of input and make sure it is an array: 
 if(typeof members === 'object' && 
      typeof members.slice === 'function')
