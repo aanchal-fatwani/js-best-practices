@@ -248,11 +248,11 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     **[⬆ Back to Top](#table-of-contents)**
 
 27. ### Add functionality with JavaScript, don’t create too much content
-    Building a lot of HTML in JavaScript can be pretty daunting and flaky. Especially on Internet Explorer you can run into all kinds of trouble by altering the document while it is still loading and manipulating the content (look up “operation aborted error” on Google for a tale of woe and misery) with innerHTML.
+    Building a lot of HTML in JavaScript can be pretty daunting and flaky. Especially on Internet Explorer you can run into all kinds of trouble by altering the document while it is still loading and manipulating the content with innerHTML.
 
     In terms of page maintenance it is also a terribly bad idea to create a lot of markup with HTML as not every maintainer will have the same level of skill as you have and could potentially really mess with your code.
 
-    I found that when I had to build an application that is very much dependent on JavaScript using an HTML template and loading this template via Ajax made much more sense. That way maintainers can alter the HTML structure and most importantly text without having to interfere with your JavaScript code. The only snag is to tell them which IDs are needed and if there are certain HTML constructs that need to be in the order you defined. You can do that with inline HTML comments (and then strip the comments out when you load the template. Check the source of the Easy YouTube template as an example.
+    I found that when I had to build an application that is very much dependent on JavaScript, using an HTML template and loading this template via Ajax made much more sense. That way maintainers can alter the HTML structure and most importantly text without having to interfere with your JavaScript code.
 
     For example, defining a script to load the template when the correct HTML container is available and apply the event handlers in the setupContent() method afterwards:
     if(playercontainer){
