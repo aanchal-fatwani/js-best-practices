@@ -33,6 +33,7 @@
 | 27   | [Add functionality with JavaScript, don’t create too much content](#add-functionality-with-javaScript-dont-create-too-much-content)                                         |
 | 28   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
 | 29   | [Development code is not live code](#development-code-is-not-live-code)                                         |
+| 30   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
 
 1. ### Avoid Global Variables
 
@@ -286,5 +287,35 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     Stop optimizing code for machines rather than other developers. A build script can remove whitespace, comments, replace strings with Array lookups (to avoid MSIE creating a string object for every single instance of a string — even in conditions) and do all the other small tweaks needed to make our JavaScript fly in browsers.
 
     If we concentrate more on making the initial code easy to understand and extend by other developers we can create the perfect build script. If we keep optimizing prematurely we’ll never get there. Do not build for yourself or the browser — build for the next developer who takes over from you.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+30. ### Don't Use Shorthand
+    Technically, you can get away with omitting most curly braces and semi-colons. Most browsers will correctly interpret the following:
+        
+        if (someVariableExists)
+           x = false
+           
+        However, consider this:
+        if (someVariableExists)
+           x = false
+           anotherFunctionCall();
+           
+        You might think that the code above would be equivalent to:
+        if (someVariableExists) {
+           x = false;
+           anotherFunctionCall();
+        }
+        
+        Unfortunately, you'd be wrong. In reality, it means:
+        if (someVariableExists) {
+           x = false;
+        }
+        anotherFunctionCall();
+        
+        As you'll notice, the indentation mimics the functionality of the curly brace. Needless to say, this is a terrible practice that should be avoided at all costs. The only time that curly braces should be omitted is with one-liners, and even this is a highly debated topic.
+
+        if(2 + 2 === 4) return 'nicely done';
+
 
     **[⬆ Back to Top](#table-of-contents)**
