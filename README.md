@@ -34,6 +34,7 @@
 | 28   | [Build on the shoulders of giants](#build-on-the-shoulders-of-giants)                                         |
 | 29   | [Development code is not live code](#development-code-is-not-live-code)                                         |
 | 30   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
+| 31   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
 
 1. ### Avoid Global Variables
 
@@ -317,5 +318,11 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
 
         if(2 + 2 === 4) return 'nicely done';
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+31. ### Place Scripts at the Bottom of Your Page
+    Remember—the primary goal is to make the page load as quickly as possible for the user. When loading a script, the browser can't continue until the entire file has been loaded. Thus, the user will have to wait longer before noticing any progress.
+
+    If you have JS files whose only purpose is to add functionality—for example, after a button is clicked—go ahead and place those files at the bottom, just before the closing body tag. This is absolutely a best practice.
 
     **[⬆ Back to Top](#table-of-contents)**
