@@ -35,6 +35,7 @@
 | 29   | [Development code is not live code](#development-code-is-not-live-code)                                         |
 | 30   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
 | 31   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
+| 32   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
 
 1. ### Avoid Global Variables
 
@@ -324,5 +325,16 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     Remember—the primary goal is to make the page load as quickly as possible for the user. When loading a script, the browser can't continue until the entire file has been loaded. Thus, the user will have to wait longer before noticing any progress.
 
     If you have JS files whose only purpose is to add functionality—for example, after a button is clicked—go ahead and place those files at the bottom, just before the closing body tag. This is absolutely a best practice.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+32. ### Declare Variables Outside of the Loops
+    When executing lengthy for statements, don't make the engine work any harder than it must. For example:
+
+    let container = document.getElementById('container');
+    for(let i = 0, len = someArray.length; i < len;  i++) {
+       container.innerHtml += 'my number: ' + i;
+       console.log(i);
+    }
 
     **[⬆ Back to Top](#table-of-contents)**
