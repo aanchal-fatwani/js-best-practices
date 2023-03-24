@@ -36,6 +36,7 @@
 | 30   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
 | 31   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
 | 32   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
+| 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
 
 1. ### Avoid Global Variables
 
@@ -336,5 +337,19 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
        container.innerHtml += 'my number: ' + i;
        console.log(i);
     }
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+33. ### The Fastest Way to Build a String
+    Don't always reach for your handy-dandy for statement when you need to loop through an array or object. Be creative and find the quickest solution for the job at hand.
+
+    let arr = ['item 1', 'item 2', 'item 3', ...];
+    let list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
+    I won’t bore you with benchmarks; you’ll just have to believe me (or test for yourself). This is by far the fastest method!
+
+    Using native methods like join(), regardless of what’s going on behind the abstraction layer, is usually much faster than any non-native alternative. — James Padolsey, james.padolsey.com
+
+
+
 
     **[⬆ Back to Top](#table-of-contents)**
