@@ -37,6 +37,7 @@
 | 31   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
 | 32   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
 | 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
+| 34   | [Use Template Literals](#use-template-literals)                                         |
 
 1. ### Avoid Global Variables
 
@@ -349,7 +350,21 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
 
     Using native methods like join(), regardless of what’s going on behind the abstraction layer, is usually much faster than any non-native alternative. — James Padolsey, james.padolsey.com
 
+    **[⬆ Back to Top](#table-of-contents)**
 
+34. ### Use Template Literals
+    Strings that we create with double or single quotes have a lot of limitations. You might want to replace some of your strings with template literals to make working with them a lot easier. Template literals are created using the backtick character (`), and they offer many advantages. You can put expressions inside them or create multi-line strings.
 
+    let person = 'Monty';
+    let fruits = 'apples';
+    let activity = 'playing games';
+    let day = 'Monday';
+    let sentence1 = person + ' will be eating ' + fruits + ' and ' + activity + ' on ' + day + '.';
+    console.log(sentence1);
+    // Output: Monty will be eating apples and playing games on Monday. 
+    let sentence2 = `${person} will be eating ${fruits} and ${activity} on ${day}.`;
+    console.log(sentence2);
+    // Output: Monty will be eating apples and playing games on Monday.
+    As you can see, we did not have to constantly move in and out of our template literal, as we had to with a regular string literal created with single or double quotes. This reduces the chances of any typing-related errors and helps us write cleaner code.
 
     **[⬆ Back to Top](#table-of-contents)**
