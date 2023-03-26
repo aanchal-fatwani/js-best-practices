@@ -38,6 +38,7 @@
 | 32   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
 | 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
 | 34   | [Use Template Literals](#use-template-literals)                                         |
+| 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
 
 1. ### Avoid Global Variables
 
@@ -366,5 +367,17 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     console.log(sentence2);
     // Output: Monty will be eating apples and playing games on Monday.
     As you can see, we did not have to constantly move in and out of our template literal, as we had to with a regular string literal created with single or double quotes. This reduces the chances of any typing-related errors and helps us write cleaner code.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+35. ### Don't Pass a String to setInterval or setTimeOut
+    Consider the following code:
+
+    setInterval(
+    "document.getElementById('container').innerHTML += 'My new number: ' + i", 3000
+    );
+    Not only is this code inefficient, but it also functions in the same way as the eval function would. Never pass a string to setInterval and setTimeOut. Instead, pass a function name.
+
+    setInterval(someFunction, 3000); 
 
     **[⬆ Back to Top](#table-of-contents)**
