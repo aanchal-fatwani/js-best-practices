@@ -39,6 +39,7 @@
 | 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
 | 34   | [Use Template Literals](#use-template-literals)                                         |
 | 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
+| 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
 
 1. ### Avoid Global Variables
 
@@ -379,5 +380,32 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     Not only is this code inefficient, but it also functions in the same way as the eval function would. Never pass a string to setInterval and setTimeOut. Instead, pass a function name.
 
     setInterval(someFunction, 3000); 
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+36. ### Use {} Instead of new Object()
+    There are multiple ways to create objects in JavaScript. Perhaps the more traditional method is to use the new constructor, like so:
+
+    var o = new Object();
+    o.name = 'Jeffrey';
+    o.lastName = 'Way';
+    o.someFunction = function() {
+       console.log(this.name);
+    }
+    However, this method receives the "bad practice" stamp. It's not actually harmful, but it is a bit verbose and unusual. Instead, I recommend that you use the object literal method.
+
+    Better
+    var o = {
+       name: 'Jeffrey',
+       lastName = 'Way',
+       someFunction : function() {
+          console.log(this.name);
+       }
+    };
+    Note that if you simply want to create an empty object, {} will do the trick.
+
+    var o = {};
+    "Object literals enable us to write code that supports lots of features yet still provide a relatively straightforward process for the implementers of our code. No need to invoke constructors directly or maintain the correct order of arguments passed to functions." — dyn-web.com
+
 
     **[⬆ Back to Top](#table-of-contents)**
