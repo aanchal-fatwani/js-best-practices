@@ -40,6 +40,7 @@
 | 34   | [Use Template Literals](#use-template-literals)                                         |
 | 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
 | 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
+| 37   | [15. Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
 
 1. ### Avoid Global Variables
 
@@ -406,6 +407,21 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
 
     var o = {};
     "Object literals enable us to write code that supports lots of features yet still provide a relatively straightforward process for the implementers of our code. No need to invoke constructors directly or maintain the correct order of arguments passed to functions." — dyn-web.com
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+37. ### Use [] Instead of new Array()
+    The same applies for creating a new array.
+
+    Okay
+    var a = new Array();
+    a[0] = "Joe";
+    a[1] = 'Plumber';
+    
+    Better
+    var a = ['Joe','Plumber'];
+    "A common error in JavaScript programs is to use an object when an array is required or an array when an object is required. The rule is simple: when the property names are small sequential integers, you should use an array. Otherwise, use an object." — Douglas Crockford
 
 
     **[⬆ Back to Top](#table-of-contents)**
