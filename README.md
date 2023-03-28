@@ -40,7 +40,7 @@
 | 34   | [Use Template Literals](#use-template-literals)                                         |
 | 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
 | 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
-| 37   | [15. Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
+| 37   | [Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
 
 1. ### Avoid Global Variables
 
