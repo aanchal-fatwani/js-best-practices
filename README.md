@@ -41,6 +41,7 @@
 | 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
 | 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
 | 37   | [Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
+| 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 
 1. ### Avoid Global Variables
 
@@ -423,5 +424,14 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     var a = ['Joe','Plumber'];
     "A common error in JavaScript programs is to use an object when an array is required or an array when an object is required. The rule is simple: when the property names are small sequential integers, you should use an array. Otherwise, use an object." — Douglas Crockford
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+38. ### Use the Spread Operator
+    Have you ever been in a situation where you wanted to pass all the items of an array as individual elements to some other function or you wanted to insert all the values from one array into another? The spread operator (...) allows us to do exactly that. Here is an example:
+
+    let people = ["adam", "monty", "andrew"]
+    let more_people = ["james", "jack", ...people, "sajal"]
+    console.log(more_people)
+    // Output: Array(6) [ "james", "jack", "adam", "monty", "andrew", "sajal" ]
 
     **[⬆ Back to Top](#table-of-contents)**
