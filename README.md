@@ -42,6 +42,7 @@
 | 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
 | 37   | [Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
 | 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
+| 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 
 1. ### Avoid Global Variables
 
@@ -433,5 +434,17 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     let more_people = ["james", "jack", ...people, "sajal"]
     console.log(more_people)
     // Output: Array(6) [ "james", "jack", "adam", "monty", "andrew", "sajal" ]
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+39. ### Be Careful With for ... in Statements
+    When looping through items in an object, you might find that you retrieve method functions or other inherited properties as well. In order to work around this, always wrap your code in an if statement which filters with hasOwnProperty.
+
+    for (key in object) {
+       if (object.hasOwnProperty(key) {
+          ...then do something...
+       }
+    }
+    This tip is from JavaScript: The Good Parts, by Douglas Crockford.
 
     **[⬆ Back to Top](#table-of-contents)**
