@@ -43,6 +43,7 @@
 | 37   | [Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
 | 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
+| 40   | [Self-Executing Functions](#self-executing-functions)                                         |
 
 1. ### Avoid Global Variables
 
@@ -446,5 +447,17 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
        }
     }
     This tip is from JavaScript: The Good Parts, by Douglas Crockford.
+
+    **[⬆ Back to Top](#table-of-contents)**
+    
+40. ### Self-Executing Functions
+    Rather than calling a function, it's quite simple to make a function run automatically when a page loads or a parent function is called. Simply wrap your function in parentheses, and then append an additional set, which essentially calls the function.
+
+    (function doSomething() {
+       return {
+          name: 'jeff',
+          lastName: 'way'
+       };
+    })();
 
     **[⬆ Back to Top](#table-of-contents)**
