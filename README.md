@@ -44,6 +44,7 @@
 | 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 40   | [Self-Executing Functions](#self-executing-functions)                                         |
+| 41   | [Raw JavaScript Is Always Quicker Than Using a Library](#raw-javaScript-is-always-quicker-than-using-a-library)                                         |
 
 1. ### Avoid Global Variables
 
@@ -459,5 +460,12 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
           lastName: 'way'
        };
     })();
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+41. ### Raw JavaScript Is Always Quicker Than Using a Library
+    JavaScript libraries, such as jQuery and lodash, can save you an enormous amount of time when coding—especially with AJAX operations. Having said that, always keep in mind that a library can never be as fast as raw JavaScript (assuming you code correctly).
+
+    jQuery's each() method is great for looping, but using a native for statement will always be an ounce quicker.
 
     **[⬆ Back to Top](#table-of-contents)**
