@@ -45,6 +45,7 @@
 | 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 40   | [Self-Executing Functions](#self-executing-functions)                                         |
 | 41   | [Raw JavaScript Is Always Quicker Than Using a Library](#raw-javaScript-is-always-quicker-than-using-a-library)                                         |
+| 42   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
 
 1. ### Avoid Global Variables
 
@@ -467,5 +468,18 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     JavaScript libraries, such as jQuery and lodash, can save you an enormous amount of time when coding—especially with AJAX operations. Having said that, always keep in mind that a library can never be as fast as raw JavaScript (assuming you code correctly).
 
     jQuery's each() method is great for looping, but using a native for statement will always be an ounce quicker.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+42. ### Quickly Assign Variable Values With Destructuring
+    We've already learned about the spread operator in JavaScript earlier in the article. Destructuring is somewhat similar in the sense that it also unpacks values stored inside arrays. The difference is that we can assign these unpacked values to unique variables.
+
+    The syntax is similar to creating an array using the [] shorthand. However, this time the brackets go on the left side of the assignment operator. Here is an example:
+
+    let [person, fruit, , day] = ['Monty', 'apple', 'reading', 'tomorrow'];
+    var sentence = `${person} will eat an ${fruit} ${day}.`;
+    console.log(sentence);
+    // Output: Monty will eat an apple tomorrow.
+    Did you notice how we just skipped the assignment of the third array element to any variable by not passing a variable name? This allows us to avoid variable assignments for values we don't need.
 
     **[⬆ Back to Top](#table-of-contents)**
