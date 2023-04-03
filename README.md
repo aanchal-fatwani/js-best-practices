@@ -46,6 +46,7 @@
 | 40   | [Self-Executing Functions](#self-executing-functions)                                         |
 | 41   | [Raw JavaScript Is Always Quicker Than Using a Library](#raw-javaScript-is-always-quicker-than-using-a-library)                                         |
 | 42   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
+| 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
 
 1. ### Avoid Global Variables
 
@@ -481,5 +482,34 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     console.log(sentence);
     // Output: Monty will eat an apple tomorrow.
     Did you notice how we just skipped the assignment of the third array element to any variable by not passing a variable name? This allows us to avoid variable assignments for values we don't need.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+42. ### Iterators and for ... of Loops
+    Iterators in JavaScript are objects which implement the next() method to return an object that stores the next value in a sequence and true or false depending on whether or not there are any more values left. This means that you can create your own iterator objects if you implement the iterator protocol.
+
+    JavaScript also has some built-in iterators like String, Array, Map, etc. You can iterate over them using for ... of loops. This is more concise and less error-prone compared to regular for loops.
+
+    let people = ["Andrew", "Adam", "James", "Jack"];
+    let people_count = people.length;
+    for(let i = 0; i < people_count; i++) {
+        console.log(people[i]);
+    }
+    /* 
+    Andrew 
+    Adam 
+    James 
+    Jack 
+    */
+    for(person of people) {
+        console.log(person);
+    }
+    /* 
+    Andrew 
+    Adam 
+    James 
+    Jack 
+    */
+    With a for...of loop, we don't have to keep track of the total length of the array or the current index. This can reduce code complexity when creating nested loops.
 
     **[⬆ Back to Top](#table-of-contents)**
