@@ -47,6 +47,7 @@
 | 41   | [Raw JavaScript Is Always Quicker Than Using a Library](#raw-javaScript-is-always-quicker-than-using-a-library)                                         |
 | 42   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
 | 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
+| 44   | [async and await](#async-and-await)                                         |
 
 1. ### Avoid Global Variables
 
@@ -485,7 +486,7 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
 
     **[⬆ Back to Top](#table-of-contents)**
 
-42. ### Iterators and for ... of Loops
+43. ### Iterators and for ... of Loops
     Iterators in JavaScript are objects which implement the next() method to return an object that stores the next value in a sequence and true or false depending on whether or not there are any more values left. This means that you can create your own iterator objects if you implement the iterator protocol.
 
     JavaScript also has some built-in iterators like String, Array, Map, etc. You can iterate over them using for ... of loops. This is more concise and less error-prone compared to regular for loops.
@@ -511,5 +512,29 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     Jack 
     */
     With a for...of loop, we don't have to keep track of the total length of the array or the current index. This can reduce code complexity when creating nested loops.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+44. ### async and await
+    You can use the async keyword to create asynchronous functions, which always return a promise either explicitly or implicitly. Asynchronous functions that you create can take advantage of the await keyword by stopping execution until the resolution of returned promises. The code outside your async function will keep executing normally.
+
+    async function delayed_hello() {
+        console.log("Hello Adam!");
+        let promise = new Promise((resolve) => {
+            setTimeout(() => resolve("Hello Andrew!"), 2000)
+        });
+        let result = await promise;
+        console.log(result);
+    }
+    console.log("Hello Monty!");
+    delayed_hello();
+    console.log("Hello Sajal!");
+    /* 
+    Hello Monty! 
+    Hello Adam! 
+    Hello Sajal! 
+    Hello Andrew! 
+    */
+    In the above example, "Hello Andrew" is logged after two seconds, while all other hellos are logged immediately. The call to the delayed_hello() function logs "Hello Adam" immediately but waits for the promise to resolve in order to log "Hello Andrew".
 
     **[⬆ Back to Top](#table-of-contents)**
