@@ -48,6 +48,7 @@
 | 42   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
 | 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
 | 44   | [async and await](#async-and-await)                                         |
+| 45   | [Use Arrow Functions](#use-arrow-functions)                                         |
 
 1. ### Avoid Global Variables
 
@@ -536,5 +537,22 @@ Arrays are tricky as they tell you they are objects. To ensure that they are arr
     Hello Andrew! 
     */
     In the above example, "Hello Andrew" is logged after two seconds, while all other hellos are logged immediately. The call to the delayed_hello() function logs "Hello Adam" immediately but waits for the promise to resolve in order to log "Hello Andrew".
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+45. ### Use Arrow Functions
+    Another essential feature added to JavaScript recently is arrow functions. They come with a slew of benefits. To begin with, they make the functional elements of JavaScript more appealing to the eye and easier to write.
+
+    Take a look at how we would implement a filter without arrow functions:
+
+    const nums = [1,2,3,4,5,6,7,8];
+    const even_nums = nums.filter( function (num) { return num%2 == 0; } )
+    Here, the callback function we pass to the filter returns true for any even number.
+
+    Arrow functions make this much more readable and concise though: 
+
+    const nums = [1,2,3,4,5,6,7,8];
+    const even_nums = nums.filter(num => num%2 == 0)
+    Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the this keyword. There are no bindings for this in the arrow functions. this has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
 
     **[⬆ Back to Top](#table-of-contents)**
