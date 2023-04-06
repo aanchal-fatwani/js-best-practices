@@ -49,6 +49,7 @@
 | 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
 | 44   | [async and await](#async-and-await)                                         |
 | 45   | [Use Arrow Functions](#use-arrow-functions)                                         |
+| 46   | [Use the Javascript includes() Method](#use-the-javascript- includes-method)                                         |
 
 1. ### Avoid Global Variables
 
@@ -554,5 +555,19 @@
     const nums = [1,2,3,4,5,6,7,8];
     const even_nums = nums.filter(num => num%2 == 0)
     Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the this keyword. There are no bindings for this in the arrow functions. this has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+46. ### Use the Javascript includes() Method
+    The includes() method in JavaScript determines whether or not a string contains the specified characters, or whether an array contains the specified element. If the string or element is found, this function returns true; otherwise, it returns false.
+
+    const str = 'This String contains the word accept';
+    console.log(str.includes('accept'));
+    //output:true
+    It's worth noting that the includes() method on Strings is case sensitive. If you want to match a string no matter the case, just make the target string lowercase first.
+
+    const str = 'This String contains the word accept';
+    console.log(str.toLowerCase().includes('string'));
+    //output: true
 
     **[⬆ Back to Top](#table-of-contents)**
