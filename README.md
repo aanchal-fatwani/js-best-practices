@@ -39,8 +39,8 @@
 | 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
 | 34   | [Use Template Literals](#use-template-literals)                                         |
 | 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
-| 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
-| 37   | [Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
+| 36   | [Use {} Instead of new Object()](#use--instead-of-new-object())                                         |
+| 37   | [Use [] Instead of new Array()](#use--instead-of-new-array())                                         |
 | 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 40   | [Self-Executing Functions](#self-executing-functions)                                         |
@@ -250,10 +250,10 @@
 
 26. ### Don’t trust any data
     Make sure that all the data that goes into your systems is clean and exactly what you need. This is most important on the back end when writing out parameters retrieved from the URL. In JavaScript, it is very important to test the type of parameters sent to your functions (using the typeof keyword). For eg. If the function expects an array as an input, it will still work if you pass string to it, but if were to iterate over elements of array, now it would iterating over characters of the string.
-In order to make this work, you need to check the type of input and make sure it is an array: 
-if(typeof members === 'object' && 
-     typeof members.slice === 'function')
-Arrays are tricky as they tell you they are objects. To ensure that they are arrays, check one of the methods only arrays have.
+    In order to make this work, you need to check the type of input and make sure it is an array: 
+    if(typeof members === 'object' && 
+        typeof members.slice === 'function')
+    Arrays are tricky as they tell you they are objects. To ensure that they are arrays, check one of the methods only arrays have.
 
     Another very insecure practice is to read information from the DOM and use it without comparison. For example, I once had to debug some code that caused the JavaScript functionality to break. The code that caused it was — for some reason beyond me — reading a user name out of the innerHTML from a page element and calling a function with the data as a parameter. As the user name could be any UTF-8 character this included quotation marks and single quotes. These would end any string and the remaining part would be erroneous data. In addition, any user changing the HTML using a tool like Firebug or Opera DragonFly could change the user name to anything and inject this data into your functions.
 
