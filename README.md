@@ -39,8 +39,8 @@
 | 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
 | 34   | [Use Template Literals](#use-template-literals)                                         |
 | 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
-| 36   | [Use {} Instead of new Object()](#use-{}-instead-of-new-object())                                         |
-| 37   | [Use [] Instead of new Array()](#use-[]-instead-of-new-array())                                         |
+| 36   | [Use {} Instead of new Object()](#use--instead-of-new-object())                                         |
+| 37   | [Use [] Instead of new Array()](#use--instead-of-new-array())                                         |
 | 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 40   | [Self-Executing Functions](#self-executing-functions)                                         |
