@@ -49,7 +49,7 @@
 | 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
 | 44   | [async and await](#async-and-await)                                         |
 | 45   | [Use Arrow Functions](#use-arrow-functions)                                         |
-| 46   | [Use the Javascript includes() Method](#use-the-javascript- includes-method)                                         |
+| 46   | [Use the Javascript includes() Method](#use-the-javascript-includes-method)                                         |
 
 1. ### Avoid Global Variables
 
