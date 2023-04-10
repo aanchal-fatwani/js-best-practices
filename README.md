@@ -50,6 +50,7 @@
 | 44   | [async and await](#async-and-await)                                         |
 | 45   | [Use Arrow Functions](#use-arrow-functions)                                         |
 | 46   | [Use the Javascript includes() Method](#use-the-javascript-includes-method)                                         |
+| 47   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
 
 1. ### Avoid Global Variables
 
@@ -569,5 +570,19 @@
     const str = 'This String contains the word accept';
     console.log(str.toLowerCase().includes('string'));
     //output: true
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+47. ### Run Promises in Parallel
+    It is preferable to run your asynchronous tasks in parallel as it can make your app much faster and more responsive. If your tasks don't rely on the results from one another, simply wrap them in Promise.all and run them in parallel.
+
+    It is really great to combine async / await and Promise.all, but you must be careful to think through what parts happen sequentially and what parts happen in parallel. Here's an example of fetching the text from an array of URLs concurrently with Promise.all and await.
+
+    const urls = ["https://en.wikipedia.org/wiki/Canada", "https://en.wikipedia.org/wiki/Nigeria", "https://en.wikipedia.org/wiki/Vietnam"]
+    const countryInfo = await Promise.all(urls.map( async url =>
+      const resp = await fetch(url);
+      return resp.text();
+    }));
+    This will map the URLs in the array to an array of async functions. Each async function will fetch the text from the URL and return it. Since this is an async function, it is actually a Promise. Promise.all will wait on those promises and return the array of text that they loaded when they are all complete.
 
     **[⬆ Back to Top](#table-of-contents)**
