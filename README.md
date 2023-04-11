@@ -51,6 +51,7 @@
 | 45   | [Use Arrow Functions](#use-arrow-functions)                                         |
 | 46   | [Use the Javascript includes() Method](#use-the-javascript-includes-method)                                         |
 | 47   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
+| 48   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
 
 1. ### Avoid Global Variables
 
@@ -584,5 +585,20 @@
       return resp.text();
     }));
     This will map the URLs in the array to an array of async functions. Each async function will fetch the text from the URL and return it. Since this is an async function, it is actually a Promise. Promise.all will wait on those promises and return the array of text that they loaded when they are all complete.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+48. ### Use Regex When Extracting or Working With Strings
+    Regex (regular expressions) is a really powerful and even fun tool. If you find yourself doing complicated searches and manipulations on strings using methods like indexOf() and substring(), you should reach for regex instead.
+
+    Regular expressions enable you to search for complex patterns, and replace or extract text matching those patterns.
+
+    A classic use of regex is to validate input. For example, the following regex can be used to validate a US five-digit zip code:
+
+    const zipRegex = /\d{5}/
+    console.log(zipRegex.test("12345"))
+    //output: true 
+    console.log(zipRegex.text("B3K 1R2"))
+    //output: false
 
     **[⬆ Back to Top](#table-of-contents)**
