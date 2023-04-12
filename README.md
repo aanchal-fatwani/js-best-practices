@@ -52,6 +52,7 @@
 | 46   | [Use the Javascript includes() Method](#use-the-javascript-includes-method)                                         |
 | 47   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
 | 48   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
+| 49   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
 
 1. ### Avoid Global Variables
 
@@ -600,5 +601,12 @@
     //output: true 
     console.log(zipRegex.text("B3K 1R2"))
     //output: false
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+49. ### Put JavaScript in a Separate File
+    JavaScript can be written in a <script> tag in your HTML, or it can be kept in its own file and linked within your HTML. This helps keep different sorts of code isolated from one another this manner, and makes your code more understandable and well-organized.
+
+    Keeping your JavaScript in separate files outside of the HTML facilitates the reuse of code across multiple HTML files. It provides for easier code reading, and it saves loading time since web browsers can cache external JavaScript files.
 
     **[⬆ Back to Top](#table-of-contents)**
