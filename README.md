@@ -53,6 +53,7 @@
 | 47   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
 | 48   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
 | 49   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
+| 50   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
 
 1. ### Avoid Global Variables
 
@@ -608,5 +609,16 @@
     JavaScript can be written in a <script> tag in your HTML, or it can be kept in its own file and linked within your HTML. This helps keep different sorts of code isolated from one another this manner, and makes your code more understandable and well-organized.
 
     Keeping your JavaScript in separate files outside of the HTML facilitates the reuse of code across multiple HTML files. It provides for easier code reading, and it saves loading time since web browsers can cache external JavaScript files.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+50. ### Use Splice to Remove Items From an Array
+    I've seen developers use the delete method to remove an item from an array. This is incorrect, because the delete function substitutes the object with undefined rather than removing it. In JavaScript, the best approach to remove an element from an array based on its value is to use the indexOf() function to discover the index number of that value in the array, and then use the splice() function to delete that index value.
+
+    var items = ["apple","orange","berries","strawberry"];
+    items.splice(2,1);
+    console.log(items);
+    //output: ['apple', 'orange', 'strawberry']
+
 
     **[⬆ Back to Top](#table-of-contents)**
