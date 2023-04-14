@@ -54,6 +54,7 @@
 | 48   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
 | 49   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
 | 50   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
+| 51   | [Learn Unit Testing](#learn-unit-testing)                                         |
 
 1. ### Avoid Global Variables
 
@@ -620,5 +621,9 @@
     console.log(items);
     //output: ['apple', 'orange', 'strawberry']
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+51. ### Learn Unit Testing
+    When I first started adding unit tests as a developer, I frequently discovered bugs. Tests are the most effective way to ensure that your code is error-free. Jest is a great place to start, but there are other options that are just as easy to use. Before any code is deployed, it should be subjected to unit testing to ensure that it fulfills quality standards. This promotes a dependable engineering environment that prioritizes quality. Unit testing saves time and money during the product development lifecycle, and it helps developers design better, more efficient code.
 
     **[⬆ Back to Top](#table-of-contents)**
