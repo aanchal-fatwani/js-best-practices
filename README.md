@@ -277,22 +277,36 @@
     I found that when I had to build an application that is very much dependent on JavaScript, using an HTML template and loading this template via Ajax made much more sense. That way maintainers can alter the HTML structure and most importantly text without having to interfere with your JavaScript code.
 
     For example, defining a script to load the template when the correct HTML container is available and apply the event handlers in the setupContent() method afterwards:
+
     if(playercontainer){
+
         ajax('template.html');
+
     };
     .
     .
     request.onreadystatechange = function(){
-    if(request.readyState == 4){
+ 
+   if(request.readyState == 4){
+
       if(request.status){ 
+
         if(request.status === 200 || request.status === 304){
+
           if(url === 'template.html'){
+
             setupPlayer(request.responseText);
+
           }
+
         }
-      }else{
+
+      } else {
+
         alert('Error: Could not find template...');
+
       }
+
     }
   
     This way people can translate and change the template any way they want to without having to alter the JavaScript code.
