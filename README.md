@@ -255,7 +255,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 26. ### Don’t trust any data
-    Make sure that all the data that goes into your systems is clean and exactly what you need. This is most important on the back end when writing out parameters retrieved from the URL. In JavaScript, it is very important to test the type of parameters sent to your functions (using the typeof keyword). For eg. If the function expects an array as an input, it will still work if you pass string to it, but if were to iterate over elements of array, now it would iterating over characters of the string.
+    Make sure that all the data that goes into the systems is clean and exactly what is needed. This is most important on the back end when writing out parameters retrieved from the URL. In JavaScript, it is very important to test the type of parameters sent to your functions (using the typeof keyword). For eg. If the function expects an array as an input, it will still work if you pass string to it, but if were to iterate over elements of array, now it would iterating over characters of the string.
     In order to make this work, you need to check the type of input and make sure it is an array: 
     if(typeof members === 'object' && 
         typeof members.slice === 'function')
@@ -278,36 +278,36 @@
 
     For example, defining a script to load the template when the correct HTML container is available and apply the event handlers in the setupContent() method afterwards:
 
-    if(playercontainer){
+        if(playercontainer){
 
-        ajax('template.html');
+            ajax('template.html');
 
-    };
-    .
-    .
-    request.onreadystatechange = function(){
- 
-   if(request.readyState == 4){
+        };
+        .
+        .
+        request.onreadystatechange = function(){
 
-      if(request.status){ 
+       if(request.readyState == 4){
 
-        if(request.status === 200 || request.status === 304){
+          if(request.status){ 
 
-          if(url === 'template.html'){
+            if(request.status === 200 || request.status === 304){
 
-            setupPlayer(request.responseText);
+              if(url === 'template.html'){
+
+                setupPlayer(request.responseText);
+
+              }
+
+            }
+
+          } else {
+
+            alert('Error: Could not find template...');
 
           }
 
         }
-
-      } else {
-
-        alert('Error: Could not find template...');
-
-      }
-
-    }
   
     This way people can translate and change the template any way they want to without having to alter the JavaScript code.
 
