@@ -561,7 +561,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 45. ### Use Arrow Functions
-    Another essential feature added to JavaScript recently is arrow functions. They come with a slew of benefits. To begin with, they make the functional elements of JavaScript more appealing to the eye and easier to write.
+    Arrow functions make the functional elements of JavaScript more appealing to the eye and easier to write.
 
     Take a look at how we would implement a filter without arrow functions:
 
@@ -573,7 +573,7 @@
 
     const nums = [1,2,3,4,5,6,7,8];
     const even_nums = nums.filter(num => num%2 == 0)
-    Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the this keyword. There are no bindings for this in the arrow functions. this has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
+    Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the this keyword. There are no bindings for this in the arrow functions. 'this' has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
 
     **[⬆ Back to Top](#table-of-contents)**
 
