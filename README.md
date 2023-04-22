@@ -4,16 +4,14 @@
 
 | No. | Title                                                                                                                                                         |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [Avoid Global Variables](#avoid-global-variables)                                         |
+| 1   | [Minimize the use of Global Variables](#minimize-the-use-of-global-variables)                                         |
 | 2   | [Always Declare Local Variables](#always-declare-local-variables)                                         |
-| 3   | [Declarations on Top](#declarations-on-top)                                         |
-| 4   | [Initialize Variables](#initialize-variables)                                         |
-| 5   | [Declare Objects with const](#declare-objects-with-const)                                         |
-| 6   | [Declare Arrays with const](#declare-arrays-with-const)                                         |
-| 7   | [Don't Use new Object](#dont-use-new-object)                                         |
-| 8   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
-| 9   | [Use === Comparison](#use--comparison)                                         |
-| 10   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
+| 3   | [Declarations should be at the top](#declarations-should-be-at-the-top)                                         |
+| 4   | [Initialize variables when declared](#initialize-variables-when-declared)                                         |
+| 5   | [Declare Objects and Arrays with const](#declare-objects-and-arrays-with-const)                                        |
+| 6   | [Don't Use 'new' for Objects](#dont-use-new-for-objects)                                        |
+| 7   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
+| 8   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
 | 11   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
 | 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
 | 13   | [Avoid Using eval](#avoid-using-eval)                                         |
@@ -56,58 +54,37 @@
 | 50   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
 | 51   | [Incorporate Unit Testing](#incorporate-unit-testing)                                         |
 
-1. ### Avoid Global Variables
-
-    Minimize the use of global variables.
-
-    This includes all data types, objects, and functions.
-
-    Global variables and functions can be overwritten by other scripts.
-
-    Use local variables or closures instead.
+1. ### Minimize the use of Global Variables
+    They can be overwritten and cause issues. Use local variables or closures instead.
 
       **[⬆ Back to Top](#table-of-contents)**
+
 
 2. ### Always Declare Local Variables
-
-    All variables used in a function should be declared as local variables.
-    
-    Local variables must be declared with the let or const keyword, otherwise they will become global variables.
-
-      **[⬆ Back to Top](#table-of-contents)**
-      
-3. ### Declarations on Top
-
-    All declarations should be at the top of each script or function.
-
-    This will:
-    - Provide a single place to look for local variables
-    - Make it easier to avoid unwanted (implied) global variables
-    - Reduce the possibility of unwanted re-declarations
-
-      **[⬆ Back to Top](#table-of-contents)**
-      
-4. ### Initialize Variables
-
-     All variables should be initialized at the time of declaration.
-
-     This will:
-      - Provide a single place to initialize variables
-      - Avoid undefined values
+    Undeclared variables become global variables. Use let or const to declare local variables.
 
       **[⬆ Back to Top](#table-of-contents)**
 
-5. ### Declare Objects with const
-      Declaring objects with const will prevent any accidental change.
+
+3. ### Declarations should be at the top
+    This keeps all declarations in one place and avoids errors with re-declarations and unintended global variables.
 
       **[⬆ Back to Top](#table-of-contents)**
 
-6. ### Declare Arrays with const
-    Declaring arrays with const will prevent any accidental change.
+
+4. ### Initialize variables when declared
+    This simplifies initialization and avoids undefined values.
 
       **[⬆ Back to Top](#table-of-contents)**
 
-7. ### Don't Use new Object
+
+5. ### Declare Objects and Arrays with const
+      This prevents accidental changes.
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+
+6. ### Don't Use 'new' for Objects
     - Use "" instead of new String()
     - Use 0 instead of new Number()
     - Use false instead of new Boolean()
@@ -117,31 +94,20 @@
     - Use function(){} instead of new Function()
 
       **[⬆ Back to Top](#table-of-contents)**
+
       
-8. ### Beware of Automatic Type Conversions
-    - JavaScript is loosely typed.
-    A variable can contain all data types.
-
-    - A variable can change its data type:
-    Beware that numbers can accidentally be converted to strings or NaN (Not a Number).
-
-    - When doing mathematical operations, JavaScript can convert numbers to strings:
-    Subtracting a string from a string, does not generate an error but returns NaN (Not a Number).
+7. ### Beware of Automatic Type Conversions
+    Use === for comparison to avoid automatic type conversions.
 
       **[⬆ Back to Top](#table-of-contents)**
-      
-9. ### Use === Comparison
-    The == comparison operator always converts (to matching types) before comparison.
+
+
+8. ### Use Parameter Defaults
+    Use default values for arguments to avoid undefined values which may break code.
 
       **[⬆ Back to Top](#table-of-contents)**
-      
-10. ### Use Parameter Defaults
-    If a function is called with a missing argument, the value of the missing argument is set to undefined.
 
-    Undefined values can break the code. It is a good habit to assign default values to arguments.
 
-      **[⬆ Back to Top](#table-of-contents)**
-      
 11. ### End Your Switches with Defaults
     Always end your switch statements with a default. Even if you think there is no need for it.
 
