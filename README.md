@@ -12,16 +12,16 @@
 | 6   | [Don't Use 'new' for Objects](#dont-use-new-for-objects)                                        |
 | 7   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
 | 8   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
-| 11   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
-| 12   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
-| 13   | [Avoid Using eval](#avoid-using-eval)                                         |
-| 14   | [Call things by their name](#call-things-by-their-name)                                         |
-| 15   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
-| 16   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
-| 17   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
-| 18   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
-| 19   | [Modularize — one function per task](#modularize--one-function-per-task)                                         |
-| 20   | [Enhance progressively](#enhance-progressively)                                         |
+| 9   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
+| 10   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
+| 11   | [Avoid Using eval](#avoid-using-eval)                                         |
+| 12   | [Call things by their name](#call-things-by-their-name)                                         |
+| 13   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
+| 14   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
+| 15   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
+| 16   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
+| 17   | [Modularize — one function per task](#modularize--one-function-per-task)                                         |
+| 18   | [Enhance progressively](#enhance-progressively)                                         |
 | 21   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 | 22   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
 | 23   | [Optimize loops](#optimize-loops)                                         |
@@ -79,9 +79,9 @@
 
 
 5. ### Declare Objects and Arrays with const
-      This prevents accidental changes.
+    This prevents accidental changes.
 
-      **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 
 6. ### Don't Use 'new' for Objects
@@ -108,71 +108,65 @@
       **[⬆ Back to Top](#table-of-contents)**
 
 
-11. ### End Your Switches with Defaults
-    Always end your switch statements with a default. Even if you think there is no need for it.
+9. ### End Your Switches with Defaults
+    Always add a default case to switch statements, even if you think it's not necessary.
 
       **[⬆ Back to Top](#table-of-contents)**
+
       
-12. ### Avoid Number, String, and Boolean as Objects
-    Always treat numbers, strings, or booleans as primitive values. Not as objects.
-
-    Declaring these types as objects, slows down execution speed, and produces nasty side effects.
+10. ### Avoid Number, String, and Boolean as Objects
+    Primitive values, such as numbers, strings, and booleans, should be treated as primitive data types and not as objects to optimize the execution speed and avoid side-effects.
 
       **[⬆ Back to Top](#table-of-contents)**
+
       
-13. ### Avoid Using eval()
-    The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
-
-    Because it allows arbitrary code to be run, it also represents a security problem.
+11. ### Avoid Using eval()
+    Avoid using the eval() function, as it poses security risks by allowing arbitrary code to be executed.
 
       **[⬆ Back to Top](#table-of-contents)**
 
-14. ### Call things by their name
-    Good variable and function names should be easy to understand and tell you what is going on — not more and not less. 
+
+12. ### Call things by their name
+    Use clear and easily understandable variable and function names, and avoid ambiguous or confusing names.
 
       **[⬆ Back to Top](#table-of-contents)**
 
-15. ### Stick to a strict coding style
-    Clean and valid code means less confusing bugs to fix, easier handover to other developers and better code security. When you rely on hacks to get your code to work it is likely that there is also a security exploit that uses the same hacks. In addition, as hacks get fixed in browsers, your code will cease to work in the next version of the browser.
 
-    Valid code also means that it can be converted by scripts to other formats — hacky code will need a human to do that.
-
-      **[⬆ Back to Top](#table-of-contents)**
-
-16. ### Comment as much as needed but not more
-    Comments are your messages to other developers (and yourself, if you come back to your code after several months working on something else). There’s been numerous battles raging over the years about whether to use comments at all, the main argument being that good code should explain itself.
-
-    Again the trick is moderation. Comment when there is an important thing to say, and if you do comment use the /* */ notation. Single line comments using // can be problematic if people minify your code without stripping comments and in general are less versatile.
+13. ### Stick to a strict coding style
+    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released.
 
       **[⬆ Back to Top](#table-of-contents)**
 
-17. ### Avoid mixing CSS or styling with other technologies
-    Whilst it is possible to create everything you need in a document using JavaScript, CSS and manipulating the DOM, it is not necessarily the most effective way of doing so. 
-    
-    Adding the code to put a red border around every input field when its class is “mandatory” and there’s nothing in it through Javascript is possible, however it means that if you later need to make a change to these styles you need to go through the JavaScript and apply the changes there. By adding a class called “error” to the element when there is an error, you can ensure that the styling information is kept inside the CSS, which is more appropriate.
+
+14. ### Comment as much as needed but not more
+    Use commenting to provide relevant information to other developers, but only when necessary. Avoid single line comments, and instead use the /* */ notation for comments.
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+
+15. ### Avoid mixing CSS or styling with other technologies
+    Avoid mixing unrelated technologies, such as adding styling with JavaScript. Keep styling information inside CSS to make it easier to manage and modify the styles.
 
      **[⬆ Back to Top](#table-of-contents)**
 
-18. ### Use shortcut notation when it makes sense
-    Instead of repeating the object name for each property or method and assigning values through '.', make use of object literal and assign values through '{}'.
-    
-    Conditions can be shortened using “ternary notation”. Anything before the question mark is the condition, the value immediately after it is the true case and the one after the colon the false case. Ternary notation can be nested, but I’d avoid that to keep things readable.
-    
-    Another common situation in JavaScript is providing a preset value for a variable if it is not defined through '||' the double pipe character. For eg. x || 5 will capture value of x if x is present, otherwise it will take 5.
+
+16. ### Use shortcut notation when it makes sense
+    Use shortcuts like object literals, ternary notations, and || notation, whenever possible, to optimize code.
     
      **[⬆ Back to Top](#table-of-contents)**
 
-19. ### Modularize — one function per task
-    Create functions that fulfill one job at a time which makes it easy for other developers to debug and change the code without having to scan through all the code to work out what code block performs what function.
 
-    This also applies to creating helper functions for common tasks. If you find yourself doing the same thing in several different functions then it is a good idea to create a more generic helper function instead, and reuse that functionality where it is needed.
+17. ### Modularize — one function per task
+    Break down tasks into smaller functions, and create helper functions for repetitive tasks, which makes the code smaller, manageable, and easy to debug.
     
      **[⬆ Back to Top](#table-of-contents)**
 
-20. ### Enhance progressively
-    Write code that works regardless of available technology. In the case of JavaScript, this means that when scripting is not available (say on a BlackBerry, or because of an over-zealous security policy) your web products should still allow users to reach a certain goal, not block them because of the lack of JavaScript which they can’t turn on, or don’t want to.
+
+18. ### Enhance progressively
+    Write code that works even when certain technologies are unavailable, like scripting(for non-JS browsers). This enhances the functionality of your webpage or web product.
 
     **[⬆ Back to Top](#table-of-contents)**
+
 
 21. ### Allow for configuration and translation
     To keep your code maintainable and clean is to create a configuration object that contains all the things that are likely to change over time. These include any text used in elements you create (including button values and alternative text for images), CSS class and ID names and general parameters of the interface you build.
