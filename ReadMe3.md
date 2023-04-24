@@ -32,16 +32,16 @@
 | 26   | [Make use of JS libraries](#make-use-of-js-libraries)                                         |
 | 27   | [Build the code developer friendly](#build-the-code-developer-friendly)                                         |
 | 28   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
-| 31   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
-| 32   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
-| 33   | [The Fastest Way to Build a String](#the-fastest-way-to-build-a-string)                                         |
-| 34   | [Use Template Literals](#use-template-literals)                                         |
-| 35   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
-| 36   | [Use {} Instead of new Object()](#use--instead-of-new-object())                                         |
-| 37   | [Use [] Instead of new Array()](#use--instead-of-new-array())                                         |
-| 38   | [Use the Spread Operator](#use-the-spread-operator)                                         |
-| 39   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
-| 40   | [Self-Executing Functions](#self-executing-functions)                                         |
+| 29   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
+| 30   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
+| 31   | [Use native methods to Build a String](#use-native-methods-to-build-a-string)                                         |
+| 32   | [Use Template Literals](#use-template-literals)                                         |
+| 33   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
+| 34   | [Use {} Instead of new Object()](#use--instead-of-new-object())                                         |
+| 35   | [Use [] Instead of new Array()](#use--instead-of-new-array())                                         |
+| 36   | [Use the Spread Operator](#use-the-spread-operator)                                         |
+| 37   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
+| 38   | [Use Self-Executing Functions](#use-self-executing-functions)                                         |
 | 41   | [Raw JavaScript Is Always Quicker Than Using a Library](#raw-javaScript-is-always-quicker-than-using-a-library)                                         |
 | 42   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
 | 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
@@ -230,138 +230,65 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-31. ### Place Scripts at the Bottom of Your Page
-    Remember—the primary goal is to make the page load as quickly as possible for the user. When loading a script, the browser can't continue until the entire file has been loaded. Thus, the user will have to wait longer before noticing any progress.
-
-    If you have JS files whose only purpose is to add functionality—for example, after a button is clicked—go ahead and place those files at the bottom, just before the closing body tag. This is absolutely a best practice.
+29. ### Place Scripts at the Bottom of Your Page
+    To reduce page loading time, place scripts at the bottom, especially those that add functionality after the user clicks a button.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-32. ### Declare Variables Outside of the Loops
-    When executing lengthy for statements, don't make the engine work any harder than it must. For example:
 
-    let container = document.getElementById('container');
-    for(let i = 0, len = someArray.length; i < len;  i++) {
-       container.innerHtml += 'my number: ' + i;
-       console.log(i);
-    }
+30. ### Declare Variables Outside of the Loops
+    This will help avoid making the engine work any harder than it needs to.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-33. ### The Fastest Way to Build a String
-    Don't always reach for your handy-dandy for statement when you need to loop through an array or object. Be creative and find the quickest solution for the job at hand.
 
-    let arr = ['item 1', 'item 2', 'item 3', ...];
-    let list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
-    I won’t bore you with benchmarks; you’ll just have to believe me (or test for yourself). This is by far the fastest method!
-
-    Using native methods like join(), regardless of what’s going on behind the abstraction layer, is usually much faster than any non-native alternative. — James Padolsey, james.padolsey.com
+31. ### Use native methods to Build a String
+    Use native methods like join() instead of a for statement when looping through arrays to make your code faster.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-34. ### Use Template Literals
-    Strings that we create with double or single quotes have a lot of limitations. You might want to replace some of your strings with template literals to make working with them a lot easier. Template literals are created using the backtick character (`), and they offer many advantages. You can put expressions inside them or create multi-line strings.
 
-    let person = 'Monty';
-    let fruits = 'apples';
-    let activity = 'playing games';
-    let day = 'Monday';
-    let sentence1 = person + ' will be eating ' + fruits + ' and ' + activity + ' on ' + day + '.';
-    console.log(sentence1);
-    // Output: Monty will be eating apples and playing games on Monday. 
-    let sentence2 = `${person} will be eating ${fruits} and ${activity} on ${day}.`;
-    console.log(sentence2);
-    // Output: Monty will be eating apples and playing games on Monday.
-    As you can see, we did not have to constantly move in and out of our template literal, as we had to with a regular string literal created with single or double quotes. This reduces the chances of any typing-related errors and helps us write cleaner code.
+32. ### Use Template Literals
+    Use template literals instead of traditional strings since they are more flexible and easier to work with.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-35. ### Don't Pass a String to setInterval or setTimeOut
-    Consider the following code:
 
-    setInterval(
-    "document.getElementById('container').innerHTML += 'My new number: ' + i", 3000
-    );
-    Not only is this code inefficient, but it also functions in the same way as the eval function would. Never pass a string to setInterval and setTimeOut. Instead, pass a function name.
-
-    setInterval(someFunction, 3000); 
+33. ### Don't Pass a String to setInterval or setTimeOut
+    Instead, pass a function name to avoid inefficient code and reduce the chances of errors. 
 
     **[⬆ Back to Top](#table-of-contents)**
 
-36. ### Use {} Instead of new Object()
-    There are multiple ways to create objects in JavaScript. Perhaps the more traditional method is to use the new constructor, like so:
 
-    var o = new Object();
-    o.name = 'Jeffrey';
-    o.lastName = 'Way';
-    o.someFunction = function() {
-       console.log(this.name);
-    }
-    However, this method receives the "bad practice" stamp. It's not actually harmful, but it is a bit verbose and unusual. Instead, I recommend that you use the object literal method.
-
-    Better
-    var o = {
-       name: 'Jeffrey',
-       lastName = 'Way',
-       someFunction : function() {
-          console.log(this.name);
-       }
-    };
-    Note that if you simply want to create an empty object, {} will do the trick.
-
-    var o = {};
-    "Object literals enable us to write code that supports lots of features yet still provide a relatively straightforward process for the implementers of our code. No need to invoke constructors directly or maintain the correct order of arguments passed to functions." — dyn-web.com
-
+34. ### Use {} Instead of new Object()
+    Use object literals instead of the new constructor method to create objects in JavaScript since it is a more straightforward process.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-37. ### Use [] Instead of new Array()
-    The same applies for creating a new array.
 
-    Okay
-    var a = new Array();
-    a[0] = "Joe";
-    a[1] = 'Plumber';
-    
-    Better
-    var a = ['Joe','Plumber'];
-    "A common error in JavaScript programs is to use an object when an array is required or an array when an object is required. The rule is simple: when the property names are small sequential integers, you should use an array. Otherwise, use an object." — Douglas Crockford
+35. ### Use [] Instead of new Array()
+    Use [] to create a new array instead of the new Array() constructor to improve code readability.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-38. ### Use the Spread Operator
-    Have you ever been in a situation where you wanted to pass all the items of an array as individual elements to some other function or you wanted to insert all the values from one array into another? The spread operator (...) allows us to do exactly that. Here is an example:
 
-    let people = ["adam", "monty", "andrew"]
-    let more_people = ["james", "jack", ...people, "sajal"]
-    console.log(more_people)
-    // Output: Array(6) [ "james", "jack", "adam", "monty", "andrew", "sajal" ]
+36. ### Use the Spread Operator
+    Use the spread operator (...) to insert all values from one array into another or pass all items of an array as individual elements to another function.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-39. ### Be Careful With for ... in Statements
-    When looping through items in an object, you might find that you retrieve method functions or other inherited properties as well. In order to work around this, always wrap your code in an if statement which filters with hasOwnProperty.
 
-    for (key in object) {
-       if (object.hasOwnProperty(key) {
-          ...then do something...
-       }
-    }
-    This tip is from JavaScript: The Good Parts, by Douglas Crockford.
+37. ### Be Careful With for ... in Statements
+    When using a for...in loop to loop through an object, filter out method functions (such as hasOwnProperty) and other inherited properties by wrapping the code in an if statement.
 
     **[⬆ Back to Top](#table-of-contents)**
-    
-40. ### Self-Executing Functions
-    Rather than calling a function, it's quite simple to make a function run automatically when a page loads or a parent function is called. Simply wrap your function in parentheses, and then append an additional set, which essentially calls the function.
 
-    (function doSomething() {
-       return {
-          name: 'jeff',
-          lastName: 'way'
-       };
-    })();
+
+38. ### Use Self-Executing Functions
+    Make use of self-executing functions to run a function automatically when a page loads or a parent function is called.
 
     **[⬆ Back to Top](#table-of-contents)**
+
 
 41. ### Raw JavaScript Is Always Quicker Than Using a Library
     JavaScript libraries, such as jQuery and lodash, can save you an enormous amount of time when coding—especially with AJAX operations. Having said that, always keep in mind that a library can never be as fast as raw JavaScript (assuming you code correctly).
