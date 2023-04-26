@@ -42,17 +42,18 @@
 | 36   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 37   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 38   | [Use Self-Executing Functions](#use-self-executing-functions)                                         |
-| 41   | [Raw JavaScript Is Always Quicker Than Using a Library](#raw-javaScript-is-always-quicker-than-using-a-library)                                         |
-| 42   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
-| 43   | [Iterators and for ... of Loops](#iterators-and-for-of-loops)                                         |
-| 44   | [async and await](#async-and-await)                                         |
-| 45   | [Use Arrow Functions](#use-arrow-functions)                                         |
-| 46   | [Use the Javascript includes() Method](#use-the-javascript-includes-method)                                         |
-| 47   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
-| 48   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
-| 49   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
-| 50   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
-| 51   | [Incorporate Unit Testing](#incorporate-unit-testing)                                         |
+| 39   | [Use Raw JavaScript instead of Libraries wherever possible](#use-raw-javascript-instead-of-libraries-wherever-possible)                                         |
+| 40   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
+| 41   | [Make use of Iterators and for ... of Loops](#make-use-of-iterators-and-for--of-loops)                                         |
+| 42   | [Use async and await](#use-async-and-await)                                         |
+| 43   | [Use Arrow Functions more](#use-arrow-functions-more)                                         |
+| 44   | [Make use of the JavaScript includes() Method](#make-use-of-the-javascript-includes-method)                                         |
+| 45   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
+| 46   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
+| 47   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
+| 48   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
+| 48   | [Incorporate Unit Testing](#incorporate-unit-testing)                                         |
+
 
 1. ### Minimize the use of Global Variables
     They can be overwritten and cause issues. Use local variables or closures instead.
@@ -290,157 +291,72 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-41. ### Raw JavaScript Is Always Quicker Than Using a Library
-    JavaScript libraries, such as jQuery and lodash, can save you an enormous amount of time when coding—especially with AJAX operations. Having said that, always keep in mind that a library can never be as fast as raw JavaScript (assuming you code correctly).
-
-    jQuery's each() method is great for looping, but using a native for statement will always be an ounce quicker.
+39. ### Use Raw JavaScript instead of Libraries wherever possible
+    Libraries can save time but raw JavaScript is always faster.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-42. ### Quickly Assign Variable Values With Destructuring
-    We've already learned about the spread operator in JavaScript earlier in the article. Destructuring is somewhat similar in the sense that it also unpacks values stored inside arrays. The difference is that we can assign these unpacked values to unique variables.
 
-    The syntax is similar to creating an array using the [] shorthand. However, this time the brackets go on the left side of the assignment operator. Here is an example:
-
-    let [person, fruit, , day] = ['Monty', 'apple', 'reading', 'tomorrow'];
-    var sentence = `${person} will eat an ${fruit} ${day}.`;
-    console.log(sentence);
-    // Output: Monty will eat an apple tomorrow.
-    Did you notice how we just skipped the assignment of the third array element to any variable by not passing a variable name? This allows us to avoid variable assignments for values we don't need.
+40. ### Quickly Assign Variable Values With Destructuring
+    This allows us to avoid variable assignments for values we don't need.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-43. ### Iterators and for ... of Loops
-    Iterators in JavaScript are objects which implement the next() method to return an object that stores the next value in a sequence and true or false depending on whether or not there are any more values left. This means that you can create your own iterator objects if you implement the iterator protocol.
 
-    JavaScript also has some built-in iterators like String, Array, Map, etc. You can iterate over them using for ... of loops. This is more concise and less error-prone compared to regular for loops.
+41. ### Make use of Iterators and for ... of Loops
+    Iterators in JavaScript are objects which implement the next() method to return an object that stores the next value in a sequence and true or false depending on whether or not there are any more values left. JavaScript also has some built-in iterators like String, Array, Map, etc. You can iterate over them using for ... of loops. 
+    
+    Use iterators and for...of loops for more concise and less error-prone code.
 
-    let people = ["Andrew", "Adam", "James", "Jack"];
-    let people_count = people.length;
-    for(let i = 0; i < people_count; i++) {
-        console.log(people[i]);
-    }
-    /* 
-    Andrew 
-    Adam 
-    James 
-    Jack 
-    */
-    for(person of people) {
-        console.log(person);
-    }
-    /* 
-    Andrew 
-    Adam 
-    James 
-    Jack 
-    */
-    With a for...of loop, we don't have to keep track of the total length of the array or the current index. This can reduce code complexity when creating nested loops.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-44. ### async and await
-    You can use the async keyword to create asynchronous functions, which always return a promise either explicitly or implicitly. Asynchronous functions that you create can take advantage of the await keyword by stopping execution until the resolution of returned promises. The code outside your async function will keep executing normally.
 
-    async function delayed_hello() {
-        console.log("Hello Adam!");
-        let promise = new Promise((resolve) => {
-            setTimeout(() => resolve("Hello Andrew!"), 2000)
-        });
-        let result = await promise;
-        console.log(result);
-    }
-    console.log("Hello Monty!");
-    delayed_hello();
-    console.log("Hello Sajal!");
-    /* 
-    Hello Monty! 
-    Hello Adam! 
-    Hello Sajal! 
-    Hello Andrew! 
-    */
-    In the above example, "Hello Andrew" is logged after two seconds, while all other hellos are logged immediately. The call to the delayed_hello() function logs "Hello Adam" immediately but waits for the promise to resolve in order to log "Hello Andrew".
+42. ### Use async and await
+    Asynchronous functions can be created with the async keyword and take advantage of the await keyword to stop execution until the resolution of returned promises.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-45. ### Use Arrow Functions
-    Arrow functions make the functional elements of JavaScript more appealing to the eye and easier to write.
 
-    Take a look at how we would implement a filter without arrow functions:
+43. ### Use Arrow Functions more
+    Use arrow functions for more readable and concise functional JavaScript code.
 
-    const nums = [1,2,3,4,5,6,7,8];
-    const even_nums = nums.filter( function (num) { return num%2 == 0; } )
-    Here, the callback function we pass to the filter returns true for any even number.
-
-    Arrow functions make this much more readable and concise though: 
-
-    const nums = [1,2,3,4,5,6,7,8];
-    const even_nums = nums.filter(num => num%2 == 0)
     Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the this keyword. There are no bindings for this in the arrow functions. 'this' has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-46. ### Use the Javascript includes() Method
-    The includes() method in JavaScript determines whether or not a string contains the specified characters, or whether an array contains the specified element. If the string or element is found, this function returns true; otherwise, it returns false.
 
-    const str = 'This String contains the word accept';
-    console.log(str.includes('accept'));
-    //output:true
-    It's worth noting that the includes() method on Strings is case sensitive. If you want to match a string no matter the case, just make the target string lowercase first.
-
-    const str = 'This String contains the word accept';
-    console.log(str.toLowerCase().includes('string'));
-    //output: true
+44. ### Make use of the Javascript includes() Method
+    Use the includes() method to check if a string contains certain characters or if an array contains a specific element.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-47. ### Run Promises in Parallel
-    It is preferable to run your asynchronous tasks in parallel as it can make your app much faster and more responsive. If your tasks don't rely on the results from one another, simply wrap them in Promise.all and run them in parallel.
 
-    It is really great to combine async / await and Promise.all, but you must be careful to think through what parts happen sequentially and what parts happen in parallel. Here's an example of fetching the text from an array of URLs concurrently with Promise.all and await.
-
-    const urls = ["https://en.wikipedia.org/wiki/Canada", "https://en.wikipedia.org/wiki/Nigeria", "https://en.wikipedia.org/wiki/Vietnam"]
-    const countryInfo = await Promise.all(urls.map( async url =>
-      const resp = await fetch(url);
-      return resp.text();
-    }));
-    This will map the URLs in the array to an array of async functions. Each async function will fetch the text from the URL and return it. Since this is an async function, it is actually a Promise. Promise.all will wait on those promises and return the array of text that they loaded when they are all complete.
+45. ### Run Promises in Parallel
+    Run asynchronous tasks in parallel using Promise.all(). It can make the app much faster and more responsive. 
 
     **[⬆ Back to Top](#table-of-contents)**
 
-48. ### Use Regex When Extracting or Working With Strings
-    Regex (regular expressions) is a really powerful and even fun tool. If you find yourself doing complicated searches and manipulations on strings using methods like indexOf() and substring(), you should reach for regex instead.
 
-    Regular expressions enable you to search for complex patterns, and replace or extract text matching those patterns.
-
-    A classic use of regex is to validate input. For example, the following regex can be used to validate a US five-digit zip code:
-
-    const zipRegex = /\d{5}/
-    console.log(zipRegex.test("12345"))
-    //output: true 
-    console.log(zipRegex.text("B3K 1R2"))
-    //output: false
+46. ### Use Regex When Extracting or Working With Strings
+    Use regex instead of complicated string manipulation methods like indexOf() and substring().
 
     **[⬆ Back to Top](#table-of-contents)**
 
-49. ### Put JavaScript in a Separate File
-    JavaScript can be written in a <script> tag in your HTML, or it can be kept in its own file and linked within your HTML. This helps keep different sorts of code isolated from one another this manner, and makes your code more understandable and well-organized.
 
-    Keeping your JavaScript in separate files outside of the HTML facilitates the reuse of code across multiple HTML files. It provides for easier code reading, and it saves loading time since web browsers can cache external JavaScript files.
-
-    **[⬆ Back to Top](#table-of-contents)**
-
-50. ### Use Splice to Remove Items From an Array
-    I've seen developers use the delete method to remove an item from an array. This is incorrect, because the delete function substitutes the object with undefined rather than removing it. In JavaScript, the best approach to remove an element from an array based on its value is to use the indexOf() function to discover the index number of that value in the array, and then use the splice() function to delete that index value.
-
-    var items = ["apple","orange","berries","strawberry"];
-    items.splice(2,1);
-    console.log(items);
-    //output: ['apple', 'orange', 'strawberry']
+47. ### Put JavaScript in a Separate File
+    Keeping JavaScript in a separate file makes it more organized, reusable, and easier for web browsers to cache.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-51. ### Incorporate Unit Testing
-    Tests are the most effective way to ensure that your code is error-free. Jest is a great place to start, but there are other options that are just as easy to use. Before any code is deployed, it should be subjected to unit testing to ensure that it fulfills quality standards. This promotes a dependable engineering environment that prioritizes quality. Unit testing saves time and money during the product development lifecycle, and it helps developers design better, more efficient code.
+
+48. ### Use Splice to Remove Items From an Array
+    Use splice() to remove elements from an array instead of the delete method.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+49. ### Incorporate Unit Testing
+    Unit testing is essential for ensuring quality code and saving time and money during the development process.
 
     **[⬆ Back to Top](#table-of-contents)**
