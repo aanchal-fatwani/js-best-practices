@@ -134,7 +134,7 @@
 
 
 13. ### Stick to a strict coding style
-    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released.
+    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released. At the beginning of the JavaScript files, if the string "use strict" is added, it enables strict mode in your code.
 
       **[⬆ Back to Top](#table-of-contents)**
 
