@@ -304,7 +304,7 @@
 
 
 40. ### Quickly Assign Variable Values With Destructuring
-    This allows us to avoid variable assignments for values we don't need.
+    Use destructuring to extract values from objects and arrays easily. This allows us to avoid variable assignments for values we don't need. Also, destructuring assignment can be used for function arguments to make them more inline for readability.
 
     **[⬆ Back to Top](#table-of-contents)**
 
