@@ -52,7 +52,13 @@
 | 46   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
 | 47   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
 | 48   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
-| 48   | [Incorporate Unit Testing](#incorporate-unit-testing)                                         |
+| 49   | [Incorporate Unit Testing](#incorporate-unit-testing)                                         |
+| 50   | [Use Object.freeze to Create Immutable Objects](#use-objectfreeze-to-create-immutable-objects)                                         |
+| 51   | [Use the Map and Set Data Structures](#use-the-map-and-set-data-structures)                                         |
+| 52   | [Avoid Using InnerHTML](#avoid-using-innerhtml)                                         |
+| 53   | [Use Class Syntax for Object-Oriented Programming](#use-class-syntax-for-object-oriented-programming)                                         |
+| 54   | [Use the Fetch API for HTTP Requests](#use-the-fetch-api-for-http-requests)                                         |
+| 55   | [Use Linters](#use-linters)                                         |
 
 
 1. ### Minimize the use of Global Variables
@@ -134,7 +140,7 @@
 
 
 13. ### Stick to a strict coding style
-    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released. At the beginning of the JavaScript files, if the string "use strict" is added, it enables strict mode in your code.
+    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released.
 
       **[⬆ Back to Top](#table-of-contents)**
 
@@ -358,5 +364,41 @@
 
 49. ### Incorporate Unit Testing
     Unit testing is essential for ensuring quality code and saving time and money during the development process.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+50. ### Use Object.freeze to Create Immutable Objects
+    Use Object.freeze() to create immutable objects which can't be modified or deleted. This can prevent bugs and improve performance.
+    
+    **[⬆ Back to Top](#table-of-contents)**
+
+    
+51. ### Use the Map and Set Data Structures
+    The Map and Set data structures are powerful tools for handling data in JavaScript. They allow you to store data in key-value pairs and unique values, respectively. Use them where appropriate to simplify your code and improve performance. 
+    
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+52. ### Avoid Using InnerHTML
+    Avoid using innerHTML to modify the content of your web pages. This feature can cause unexpected behavior and security vulnerabilities, so use the DOM manipulation methods provided by the browser instead. 
+    
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+53. ### Use Class Syntax for Object-Oriented Programming
+    JavaScript class syntax provides a more familiar and structured approach to object-oriented programming. Use it where appropriate to simplify your code and make it more readable.
+    
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+54. ### Use the Fetch API for HTTP Requests
+    The Fetch API is a modern and powerful way to make HTTP requests in JavaScript. Use it instead of older and less secure techniques like XMLHttpRequest.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+55. ### Use Linters
+    Linters help ensure that your code follows best practices and style guidelines. Use a linter like ESLint to catch errors and enforce standards.
 
     **[⬆ Back to Top](#table-of-contents)**
