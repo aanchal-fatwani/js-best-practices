@@ -140,7 +140,7 @@
 
 
 13. ### Stick to a strict coding style
-    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released.
+    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released. Use 'use strict' to enforce stricter syntax and avoid potential errors.
 
       **[⬆ Back to Top](#table-of-contents)**
 
