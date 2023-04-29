@@ -158,7 +158,7 @@
 
 
 16. ### Use shortcut notation when it makes sense
-    Use shortcuts like object literals, ternary notations, and || notation, whenever possible, to optimize code.
+    Use shortcuts like object literals, ternary notations, and || notation, whenever possible, to optimize code. In many cases, short-circuiting is a more concise and readable way to express conditions than ternary operators. This approach involves using boolean operators like && and || to check conditions and return values.
     
      **[⬆ Back to Top](#table-of-contents)**
 
