@@ -280,7 +280,7 @@
 
 
 36. ### Use the Spread Operator
-    Use the spread operator (...) to insert all values from one array into another or pass all items of an array as individual elements to another function.
+    Use the spread operator (...) to insert all values from one array into another or pass all items of an array as individual elements to another function. It can also be used for  copying objects and arrays, rather than using Object.assign or slice methods.
 
     **[⬆ Back to Top](#table-of-contents)**
 
