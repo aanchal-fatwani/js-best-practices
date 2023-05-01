@@ -52,7 +52,7 @@
 | 46   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
 | 47   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
 | 48   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
-| 49   | [Incorporate Unit Testing](#incorporate-unit-testing)                                         |
+| 49   | [Incorporate Testing](#incorporate-testing)                                         |
 | 50   | [Use Object.freeze to Create Immutable Objects](#use-objectfreeze-to-create-immutable-objects)                                         |
 | 51   | [Use the Map and Set Data Structures](#use-the-map-and-set-data-structures)                                         |
 | 52   | [Avoid Using InnerHTML](#avoid-using-innerhtml)                                         |
@@ -362,8 +362,8 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-49. ### Incorporate Unit Testing
-    Unit testing is essential for ensuring quality code and saving time and money during the development process.
+49. ### Incorporate Testing
+    Testing is essential for catching bugs and preventing issues down the line. It ia also is essential for ensuring quality code and saving time and money during the development process. Use unit and integration tests to ensure your code is working as expected.
 
     **[⬆ Back to Top](#table-of-contents)**
 
