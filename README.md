@@ -33,7 +33,7 @@
 | 27   | [Build the code developer friendly](#build-the-code-developer-friendly)                                         |
 | 28   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
 | 29   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
-| 30   | [Declare Variables Outside of the Loops](#declare-variables-outside-of-the-loops)                                         |
+| 30   | [Declare Variables and Functions Outside of the Loops](#declare-variables-and-functions-outside-of-the-loops)                                         |
 | 31   | [Use native methods to Build a String](#use-native-methods-to-build-a-string)                                         |
 | 32   | [Use Template Literals](#use-template-literals)                                         |
 | 33   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
@@ -243,8 +243,8 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-30. ### Declare Variables Outside of the Loops
-    This will help avoid making the engine work any harder than it needs to.
+30. ### Declare Variables and Functions Outside of the Loops
+    These variables and functions will be created multiple times which will hurt the performance of your code. Move such variables and functions outside the loop instead.
 
     **[⬆ Back to Top](#table-of-contents)**
 
