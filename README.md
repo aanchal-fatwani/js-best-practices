@@ -4,7 +4,7 @@
 
 | No. | Title                                                                                                                                                         |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [Minimize the use of Global Variables](#minimize-the-use-of-global-variables)                                         |
+| 1   | [Minimize the use of Global Variables and Functions](#minimize-the-use-of-global-variables-and-functions)                                         |
 | 2   | [Always Declare Local Variables](#always-declare-local-variables)                                         |
 | 3   | [Declarations should be at the top](#declarations-should-be-at-the-top)                                         |
 | 4   | [Initialize variables when declared](#initialize-variables-when-declared)                                         |
@@ -61,8 +61,8 @@
 | 55   | [Use Linters](#use-linters)                                         |
 
 
-1. ### Minimize the use of Global Variables
-    They can be overwritten and cause issues. Use local variables or closures instead.
+1. ### Minimize the use of Global Variables and Functions
+    Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
 
       **[⬆ Back to Top](#table-of-contents)**
 
