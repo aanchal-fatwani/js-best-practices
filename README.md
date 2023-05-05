@@ -319,7 +319,7 @@
 
 
 42. ### Use async and await
-    Asynchronous functions can be created with the async keyword and take advantage of the await keyword to stop execution until the resolution of returned promises.     Use async and await keywords for cleaner, more readable asynchronous code.
+    Promises can be used for Asynchronous Code to avoid callback hell. Asynchronous functions can be created with the async keyword and take advantage of the await keyword to stop execution until the resolution of returned promises. Use async and await keywords for cleaner, more readable asynchronous code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
