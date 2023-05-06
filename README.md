@@ -59,7 +59,7 @@
 | 53   | [Use Class Syntax for Object-Oriented Programming](#use-class-syntax-for-object-oriented-programming)                                         |
 | 54   | [Use the Fetch API for HTTP Requests](#use-the-fetch-api-for-http-requests)                                         |
 | 55   | [Use Linters](#use-linters)                                         |
-
+| 56   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing)                                         |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -400,5 +400,11 @@
 
 55. ### Use Linters
     Linters help ensure that your code follows best practices and style guidelines. Use a linter like ESLint to catch errors and enforce standards.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+56. ### Use File-Based Routing instead of URL Routing
+    Use File-Based Routing instead of URL Routing to make code simpler and more maintainable.
 
     **[⬆ Back to Top](#table-of-contents)**
