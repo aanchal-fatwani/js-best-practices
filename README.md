@@ -60,6 +60,7 @@
 | 54   | [Use the Fetch API for HTTP Requests](#use-the-fetch-api-for-http-requests)                                         |
 | 55   | [Use Linters](#use-linters)                                         |
 | 56   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing)                                         |
+| 57   | [Use Server-Side Rendering for Improved Performance](#use-server-side-rendering-for-improved-performance)                                         |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -406,5 +407,11 @@
 
 56. ### Use File-Based Routing instead of URL Routing
     Use File-Based Routing instead of URL Routing to make code simpler and more maintainable.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+57. ### Use Server-Side Rendering for Improved Performance
+    Use server-side rendering to improve the initial load time and performance of your web application, especially for mobile devices with slower network speeds.
 
     **[⬆ Back to Top](#table-of-contents)**
