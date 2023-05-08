@@ -62,6 +62,7 @@
 | 56   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing)                                         |
 | 57   | [Use Server-Side Rendering for Improved Performance](#use-server-side-rendering-for-improved-performance)                                         |
 | 58   | [Use Event Delegation](#use-event-delegation)                                         |
+| 59   | [Use Memoization to Improve Performance](#use-memoization-to-improve-performance)                                         |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -420,6 +421,12 @@
 
 58. ### Use Event Delegation
     Use event delegation to reduce the number of event listeners added to the page, reducing overhead, and improving performance.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+59. ### Use Memoization to Improve Performance
+    Use memoization to cache the results of expensive function calls, improving performance when the same calculation is needed later.
 
     **[⬆ Back to Top](#table-of-contents)**
 
