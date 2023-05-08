@@ -61,6 +61,7 @@
 | 55   | [Use Linters](#use-linters)                                         |
 | 56   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing)                                         |
 | 57   | [Use Server-Side Rendering for Improved Performance](#use-server-side-rendering-for-improved-performance)                                         |
+| 58   | [Use Event Delegation](#use-event-delegation)                                         |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -415,3 +416,10 @@
     Use server-side rendering to improve the initial load time and performance of your web application, especially for mobile devices with slower network speeds.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+
+58. ### Use Event Delegation
+    Use event delegation to reduce the number of event listeners added to the page, reducing overhead, and improving performance.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
