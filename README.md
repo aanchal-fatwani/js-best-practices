@@ -63,6 +63,7 @@
 | 57   | [Use Server-Side Rendering for Improved Performance](#use-server-side-rendering-for-improved-performance)                                         |
 | 58   | [Use Event Delegation](#use-event-delegation)                                         |
 | 59   | [Use Memoization to Improve Performance](#use-memoization-to-improve-performance)                                         |
+| 60   | [Use Web Workers](#use-web-workers)                                         |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -430,3 +431,8 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+
+60. ### Use Web Workers
+    Use web workers to offload heavy computation tasks to a separate thread, improving the responsiveness of your web application.
+
+    **[⬆ Back to Top](#table-of-contents)**
