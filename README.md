@@ -64,6 +64,7 @@
 | 58   | [Use Event Delegation](#use-event-delegation)                                         |
 | 59   | [Use Memoization to Improve Performance](#use-memoization-to-improve-performance)                                         |
 | 60   | [Use Web Workers](#use-web-workers)                                         |
+| 61   | [Use the Object.assign Method for Object Composition](#use-the-object.assign-method-for-object-composition)                                                 |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -434,5 +435,11 @@
 
 60. ### Use Web Workers
     Use web workers to offload heavy computation tasks to a separate thread, improving the responsiveness of your web application.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+61. ### Use the Object.assign Method for Object Composition
+    The Object.assign method can be used to merge objects together to create new objects quickly and easily. This method is especially useful for composition-based programming.
 
     **[⬆ Back to Top](#table-of-contents)**
