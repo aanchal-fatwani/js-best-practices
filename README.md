@@ -65,7 +65,8 @@
 | 59   | [Use Memoization to Improve Performance](#use-memoization-to-improve-performance)                                         |
 | 60   | [Use Web Workers](#use-web-workers)                                         |
 | 61   | [Use the Object.assign Method for Object Composition](#use-the-object.assign-method-for-object-composition)                                                 |
-| 61   | [Use Web Components for Reusable UI Elements](#use-web-components-for-reusable-ui-elements)                                                 |
+| 62   | [Use Web Components for Reusable UI Elements](#use-web-components-for-reusable-ui-elements)                                                 |
+| 63   | [Use DRY (Don't Repeat Yourself) Principle](#use-dry-dont-repeat-yourself-principle)                                                 |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -448,5 +449,11 @@
 
 62. ### Use Web Components for Reusable UI Elements
     Use Web Components to create reusable UI elements that can be shared across multiple web applications. Web Components provide encapsulation and can simplify the development process.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+63. ### Use DRY (Don't Repeat Yourself) Principle
+    Avoid repeating the same code in multiple places. Instead, use functions, classes, or modules to encapsulate the commonly used code.
 
     **[⬆ Back to Top](#table-of-contents)**
