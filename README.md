@@ -67,6 +67,7 @@
 | 61   | [Use the Object.assign Method for Object Composition](#use-the-object.assign-method-for-object-composition)                                                 |
 | 62   | [Use Web Components for Reusable UI Elements](#use-web-components-for-reusable-ui-elements)                                                 |
 | 63   | [Use DRY (Don't Repeat Yourself) Principle](#use-dry-dont-repeat-yourself-principle)                                                 |
+| 64   | [Use Error Handling](#use-error-handling)                                                 |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -455,5 +456,11 @@
 
 63. ### Use DRY (Don't Repeat Yourself) Principle
     Avoid repeating the same code in multiple places. Instead, use functions, classes, or modules to encapsulate the commonly used code.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+64. ### Use Error Handling
+    Add proper error handling to your code to catch and handle errors in a graceful way. This can prevent crashes and improve the user experience.
 
     **[⬆ Back to Top](#table-of-contents)**
