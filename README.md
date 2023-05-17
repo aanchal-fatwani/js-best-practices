@@ -69,7 +69,8 @@
 | 63   | [Use DRY (Don't Repeat Yourself) Principle](#use-dry-dont-repeat-yourself-principle)                                                 |
 | 64   | [Use Error Handling](#use-error-handling)                                                 |
 | 65   | [Use Web Storage API for Data Storage](#use-web-storage-api-for-data-storage)                                                 |
-| 66   | [Use Factory Functions instead of Constructors](#se-factory-functions-instead-of-constructors)                                                 |
+| 66   | [Use Factory Functions instead of Constructors](#use-factory-functions-instead-of-constructors)                                                 |
+| 67   | [Avoid Global Imports](#avoid-global-imports)                                                 |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -475,5 +476,11 @@
 
 66. ### Use Factory Functions instead of Constructors
     Use factory functions as an alternative to constructors to create objects in JavaScript. Factory functions offer better control over the creation process and allow for the creation of immutable objects.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+67. ### Avoid Global Imports
+    Avoid Global Imports for Javascript Modules to prevent namespace pollution.
 
     **[⬆ Back to Top](#table-of-contents)**
