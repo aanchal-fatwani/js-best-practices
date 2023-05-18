@@ -71,6 +71,10 @@
 | 65   | [Use Web Storage API for Data Storage](#use-web-storage-api-for-data-storage)                                                 |
 | 66   | [Use Factory Functions instead of Constructors](#use-factory-functions-instead-of-constructors)                                                 |
 | 67   | [Avoid Global Imports](#avoid-global-imports)                                                 |
+| 68   | [Use Functional Programming Principles](#functional-programming)                   |
+| 69   | [Use Promises Wisely](#promises)                                                    |
+| 70   | [Use Performance Profiling Tools](#performance-profiling)                           |
+| 71   | [Use ES6 Modules](#es6-modules)                                                    |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -482,5 +486,29 @@
 
 67. ### Avoid Global Imports
     Avoid Global Imports for Javascript Modules to prevent namespace pollution.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+68. ### Use Functional Programming Principles
+    Functional programming principles such as immutability, pure functions, and higher-order functions can make your code more robust, maintainable, and readable.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+69. ###  Use Promises Wisely
+   Promises can simplify and improve your asynchronous code, but they should be used carefully. Avoid creating too many promises at once, and always handle errors properly.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+70. ### Use Performance Profiling Tools
+    Use performance profiling tools like Chrome's DevTools to identify performance issues in your code.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+71. ### Use ES6 Modules
+    ES6 modules allow you to import and export code modules between files, reducing coupling and improving maintainability.
 
     **[⬆ Back to Top](#table-of-contents)**
