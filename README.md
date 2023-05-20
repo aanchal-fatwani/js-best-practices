@@ -491,7 +491,7 @@
 
 
 68. ### Use Functional Programming Principles
-    Functional programming principles such as immutability, pure functions, and higher-order functions can make your code more robust, maintainable, and readable.
+    Use functional programming principles like immutability, pure functions, and higher-order functions to make your code more robust, maintainable, and readable. Additionally, use functional programming techniques like map, filter, and reduce for data handling and currying and composition for event handling to improve code reuse and maintainability.
 
     **[⬆ Back to Top](#table-of-contents)**
 
