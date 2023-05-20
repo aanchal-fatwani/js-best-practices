@@ -497,7 +497,7 @@
 
 
 69. ###  Use Promises Wisely
-   Promises can simplify and improve your asynchronous code, but they should be used carefully. Avoid creating too many promises at once, and always handle errors properly.
+   Promises can be used for Asynchronous Code to avoid callback hell. Promises can simplify and improve your asynchronous code, but they should be used carefully. Avoid creating too many promises at once, and always handle errors properly.
 
     **[⬆ Back to Top](#table-of-contents)**
 
