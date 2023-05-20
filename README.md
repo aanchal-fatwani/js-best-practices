@@ -509,6 +509,6 @@
 
 
 71. ### Use ES6 Modules
-    ES6 modules allow you to import and export code modules between files, reducing coupling and improving maintainability.
+    ES6 modules allow you to import and export code modules between files, reducing coupling and improving maintainability. Also, Default Exports can be used for Javascript Modules to keep the code cleaner and organized.
 
     **[⬆ Back to Top](#table-of-contents)**
