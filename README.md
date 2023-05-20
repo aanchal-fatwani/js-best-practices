@@ -179,8 +179,8 @@
 
 
 17. ### Modularize — one function per task
-    Break down tasks into smaller functions, and create helper functions for repetitive tasks, which makes the code smaller, manageable, and easy to debug. Function composition helps to organize code into small and modular functions.
-    
+    Break down tasks into smaller functions, and create helper functions for repetitive tasks, which makes the code smaller, manageable, and easy to debug. Function composition helps to organize code into small and modular functions. Avoid creating long chains of functions that can make code difficult to understand and debug. Instead of chaining all of the functions together in one long chain, it's better to break them up into separate functions and calling them individually.
+
      **[⬆ Back to Top](#table-of-contents)**
 
 
