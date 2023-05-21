@@ -75,6 +75,8 @@
 | 69   | [Use Promises Wisely](#promises)                                                    |
 | 70   | [Use Performance Profiling Tools](#performance-profiling)                           |
 | 71   | [Use ES6 Modules](#es6-modules)                                                    |
+| 72     | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing) |
+| 73     | [Use Multiple `.catch()` statements for Promises](#use-multiple--catch-----statements-for-promises) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -512,3 +514,17 @@
     ES6 modules allow you to import and export code modules between files, reducing coupling and improving maintainability. Also, Default Exports can be used for Javascript Modules to keep the code cleaner and organized.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+
+72. ### Use File-Based Routing instead of URL Routing
+    Use File-Based Routing instead of URL Routing to make code simpler and more maintainable. It can also help to structure sub-routes better as within URL routing, it can create a scenario where to incorporate all the URLs can increase the length of the object and file.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+73. ### Use Multiple `.catch()` statements for Promises
+    Use Multiple `.catch()` statements for Promises to handle errors easily and have clear error messages.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
