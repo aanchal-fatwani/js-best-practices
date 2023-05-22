@@ -77,6 +77,8 @@
 | 71   | [Use ES6 Modules](#es6-modules)                                                    |
 | 72     | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing) |
 | 73     | [Use Multiple `.catch()` statements for Promises](#use-multiple--catch-----statements-for-promises) |
+| 74     | [Use Error-First Callbacks](#use-error-first-callbacks)           |
+| 75     | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -528,3 +530,67 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
+74. ### Use Error-First Callbacks
+    By consistently using Error-First Callbacks throughout the application, we can handle errors in a standardized and consistent manner, making it easier to identify and debug issues. Additionally, by providing more meaningful error messages, we can make it easier for developers to understand and address any issues that may occur.
+      const fetchData = (callback) => {
+        axios.get('https://api.example.com/data')
+        .then((response) => {
+            setData(response.data);
+            callback(null, response.data);
+        })
+        .catch((error) => {
+            callback(error);
+        });
+    };
+
+    fetchData((error, data) => {
+        if (error) {
+        console.log(`Error fetching data: ${error.message}`);
+        } else {
+        console.log(`Fetched data: ${data}`);
+        }
+    });
+
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+75. ### Use SetTimeout instead of SetInterval
+    Use the SetTimeout function instead of SetInterval to prevent performance issues. It's generally better to use setTimeout when the processing time of each iteration of the task cannot be predicted or when there is asynchronous code involved.
+
+    Using setInterval
+    function makeApiRequest() {
+        fetch('https://example.api.com/data')
+            .then(response => response.json())
+            .then(data => {
+            // Process data here
+            console.log(data);
+            })
+            .catch(error => {
+            console.error('Error fetching data:', error);
+            });
+        }
+
+        setInterval(makeApiRequest, 5000);
+
+    Using setTimeout
+    function makeApiRequest() {
+        fetch('https://example.api.com/data')
+            .then(response => response.json())
+            .then(data => {
+            // Process data here
+            console.log(data);
+            })
+            .catch(error => {
+            console.error('Error fetching data:', error);
+            })
+            .finally(() => {
+            // Make the next request after 5 seconds
+            setTimeout(makeApiRequest, 5000);
+            });
+        }
+
+        makeApiRequest();
+
+    **[⬆ Back to Top](#table-of-contents)**
