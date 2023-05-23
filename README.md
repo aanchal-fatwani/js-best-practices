@@ -79,6 +79,9 @@
 | 73     | [Use Multiple `.catch()` statements for Promises](#use-multiple--catch-----statements-for-promises) |
 | 74     | [Use Error-First Callbacks](#use-error-first-callbacks)           |
 | 75     | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
+| 76     | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
+| 77     | [Use the Proxy Object to Intercept Object Operations](#use-the-proxy-object-to-intercept-object-operations) |
+| 78     | [Use Static Types with TypeScript or Flow](#use-static-types-with-typescript-or-flow) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -592,5 +595,97 @@
         }
 
         makeApiRequest();
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+76. ### Use Event Emitters instead of Callbacks
+    While using callbacks work perfectly fine in a small codebase, it can lead to callback hell, which becomes difficult to maintain and debug as the codebase grows. Using event emitters will improve code maintainability, readability, and prevent callback hell.
+
+    Using Event Emiitter
+        const EventEmitter = require('events');
+
+        const eventEmitter = new EventEmitter();
+
+        const processReport = (report) => {
+        console.log(`Report processed: ${report}`);
+        };
+
+        // Registering the event with a callback function
+        eventEmitter.on('processReport', processReport);
+
+        const reportGenerator = () => {
+        // Generate report
+        const report = 'Some report';
+
+        // Emitting the event with report as the parameter
+        eventEmitter.emit('processReport', report);
+        }
+
+        // Generating the report
+        reportGenerator();
+ 
+    Using Callbacks
+        const processReport = (report, callback) => {
+        // Do some processing
+        console.log(`Report processed: ${report}`);
+        // Call the callback function once processing is done
+        return callback();
+        }
+
+        const reportGenerator = (callback) => {
+        // Generate report
+        const report = 'Some report';
+        // Process the report with a callback
+        processReport(report, callback);
+        }
+
+        // Generating the report with a callback
+        reportGenerator(() => {
+        console.log('Report generation complete.');
+        });
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+77. ### Use the Proxy Object to Intercept Object Operations 
+    Use the Proxy object to intercept object operations and customize their behavior. This can be useful for adding validation or access control to objects.
+
+    const user = {
+        firstName: 'John',
+        lastName: 'Doe',
+        password: 'secret'
+        };
+
+        const userProxy = new Proxy(user, {
+        get(target, property) {
+            if (property === 'password') {
+            throw new Error('Access denied');
+            } else {
+            return target[property];
+            }
+        },
+        set(target, property, value) {
+            if (property === 'firstName') {
+            throw new Error('Cannot modify first name');
+            } else {
+            target[property] = value;
+            }
+        }
+        });
+
+        console.log(userProxy.firstName); // "John"
+        console.log(userProxy.lastName); // "Doe"
+        console.log(userProxy.password); // Throws "Access denied" error
+        userProxy.firstName = 'Jane'; // Throws "Cannot modify first name" error
+        userProxy.age = 25; // Adds the "age" property to the user object
+        console.log(userProxy.age); // 25
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
+78. ### Use Static Types with TypeScript or Flow 
+    In JavaScript, we have two popular static typing options, TypeScript and Flow. Both of these help us catch errors early on and greatly improve code quality.
+    When working with large codebases and complex functions, static typing can greatly increase the maintainability and quality of code. By using TypeScript (or Flow), not only can you catch errors early, but you can also greatly improve code completion and documentation, making it easier for yourself and other developers to understand the code and maintain it over time.
 
     **[⬆ Back to Top](#table-of-contents)**
