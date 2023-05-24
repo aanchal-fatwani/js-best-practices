@@ -76,7 +76,7 @@
 | 70   | [Use Performance Profiling Tools](#performance-profiling)                           |
 | 71   | [Use ES6 Modules](#es6-modules)                                                    |
 | 72     | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing) |
-| 73     | [Use Multiple `.catch()` statements for Promises](#use-multiple--catch-----statements-for-promises) |
+| 73     | [Use Multiple `.catch()` statements for Promises](#use-multiple-catch-statements-for-promises) |
 | 74     | [Use Error-First Callbacks](#use-error-first-callbacks)           |
 | 75     | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 | 76     | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
@@ -504,7 +504,7 @@
 
 
 69. ###  Use Promises Wisely
-   Promises can be used for Asynchronous Code to avoid callback hell. Promises can simplify and improve your asynchronous code, but they should be used carefully. Avoid creating too many promises at once, and always handle errors properly.
+    Promises can be used for Asynchronous Code to avoid callback hell. Promises can simplify and improve your asynchronous code, but they should be used carefully. Avoid creating too many promises at once, and always handle errors properly.
 
     **[⬆ Back to Top](#table-of-contents)**
 
