@@ -122,6 +122,23 @@
     - Use /()/ instead of new RegExp()
     - Use function(){} instead of new Function()
 
+    Suppose we have a constructor function named Person that initializes a person object with a name and age property.
+
+        function Person(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        let person1 = new Person("John", 30);
+        let person2 = new Person("Alex", 25);
+
+    Now, let's see what happens if we forget to use the 'new' keyword while creating an object from the Person constructor:
+
+        let person3 = Person("Mary", 20);
+
+    In this case, person3 will be undefined because the constructor function doesn't return any value. This can lead to confusion and unexpected results in your code if you're not careful.
+    To prevent this kind of issue, it's recommended to use object literals instead of constructors for creating new objects in JavaScript.
+
       **[⬆ Back to Top](#table-of-contents)**
 
       
