@@ -169,6 +169,26 @@
 11. ### Avoid Using eval()
     Avoid using the eval() function, as it poses security risks by allowing arbitrary code to be executed.
 
+    A string variable `code` which contains some JavaScript code needs to be executed dynamically at runtime. The `eval()` function could be used to execute the code:
+
+        let code = "console.log('Hello, world!')";
+        eval(code); // Outputs "Hello, world!" to the console
+
+    However, using `eval()` in this way is not recommended since it could open up your application to security vulnerabilities. An attacker could potentially inject malicious code into the `code` variable, which would then be executed by the `eval()` function. For example:
+
+        let code = "alert('You have been hacked!')";
+        eval(code); // Displays a popup with the message "You have been hacked!"
+
+    Instead, a safer way to execute dynamic code is using the `Function()` constructor. The `Function()` constructor creates a new Function object that can execute the code passed to it as a string. Here is an example:
+
+        let code = "console.log('Hello, world!')";
+        let executeCode = new Function(code);
+        executeCode(); // Outputs "Hello, world!" to the console
+
+    With this approach, the code is still executed dynamically at runtime, but there is no risk of code injection since the code is not executed until it is passed to the `Function()` constructor, which provides a controlled environment for the execution of the code.
+
+    While `eval()` can be a powerful tool, it is important to use it with caution and take steps to prevent security vulnerabilities. Using the `Function()` constructor is often a safer and more secure alternative to `eval()`.
+
       **[⬆ Back to Top](#table-of-contents)**
 
 
