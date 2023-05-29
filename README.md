@@ -20,7 +20,7 @@
 | 14   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 | 15   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 | 16   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
-| 17   | [Modularize — one function per task](#modularize--one-function-per-task)                                         |
+| 17   | [Modularize - one function per task](#modularizeone-function-per-task)                                         |
 | 18   | [Enhance progressively](#enhance-progressively)                                         |
 | 19   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 | 20   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
@@ -75,13 +75,13 @@
 | 69   | [Use Promises Wisely](#promises)                                                    |
 | 70   | [Use Performance Profiling Tools](#performance-profiling)                           |
 | 71   | [Use ES6 Modules](#es6-modules)                                                    |
-| 72     | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing) |
-| 73     | [Use Multiple `.catch()` statements for Promises](#use-multiple-catch-statements-for-promises) |
-| 74     | [Use Error-First Callbacks](#use-error-first-callbacks)           |
-| 75     | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
-| 76     | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
-| 77     | [Use the Proxy Object to Intercept Object Operations](#use-the-proxy-object-to-intercept-object-operations) |
-| 78     | [Use Static Types with TypeScript or Flow](#use-static-types-with-typescript-or-flow) |
+| 72   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing) |
+| 73   | [Use Multiple `.catch()` statements for Promises](#use-multiple-catch-statements-for-promises) |
+| 74   | [Use Error-First Callbacks](#use-error-first-callbacks)           |
+| 75   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
+| 76   | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
+| 77   | [Use the Proxy Object to Intercept Object Operations](#use-the-proxy-object-to-intercept-object-operations) |
+| 78   | [Use Static Types with TypeScript or Flow](#use-static-types-with-typescript-or-flow) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -222,7 +222,7 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
-17. ### Modularize — one function per task
+17. ### Modularize - one function per task
     Break down tasks into smaller functions, and create helper functions for repetitive tasks, which makes the code smaller, manageable, and easy to debug. Function composition helps to organize code into small and modular functions. Avoid creating long chains of functions that can make code difficult to understand and debug. Instead of chaining all of the functions together in one long chain, it's better to break them up into separate functions and calling them individually.
 
      **[⬆ Back to Top](#table-of-contents)**
@@ -243,7 +243,7 @@
 20. ### Avoid heavy nesting
     Avoid excessive nesting in your code, use generic functions instead, and aim for code that is easy to read and understand.
 
-    Another issue with nesting is variable names and loops. Starting with 'i' as the iterator and moving on to 'j', 'k', 'l', and beyond can quickly get messy. Use descriptive variable names to avoid confusion.
+    A common issue with nesting is variable names and loops. Starting with 'i' as the iterator and moving on to 'j', 'k', 'l', and beyond can quickly get messy. Use descriptive variable names to avoid confusion.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -256,6 +256,32 @@
 
 22. ### Keep DOM access to a minimum
     Reduce DOM access since it is costly and can slow down the performance of your code. Use a tool function to transform a string to DOM elements to improve the code's speed.
+
+        // Bad code - accessing DOM multiple times
+        const element1 = document.createElement('div')
+        element1.id = "myElement1"
+        element1.textContent = "Hello, world!"
+        element1.style.color = 'red'
+
+        const element2 = document.createElement('div')
+        element2.id = "myElement2"
+        element2.textContent = "Hello, world!"
+        element2.style.color = 'blue'
+
+
+        // Good code - accessing DOM once using a tool function
+        function createElementsFromString(str) {
+        const div = document.createElement('div');
+        div.innerHTML = str.trim();
+        return div.firstChild;
+        }
+
+        const element1 = createElementsFromString('<div id="myElement1">Hello, world!</div>');
+        element1.style.color = 'red';
+
+        const element2 = createElementsFromString('<div id="myElement2">Hello, world!</div>');
+        element2.style.color = 'blue';
+
 
     **[⬆ Back to Top](#table-of-contents)**
 
