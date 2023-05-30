@@ -293,7 +293,11 @@
 
 
 24. ### Validate data
-    Avoid relying on invalid data, validate it before using it to avoid glitches and security threats. Do not solely depend on client-side validation, as it can create security vulnerabilities.
+    Avoid relying on invalid data, validate it before using it to avoid glitches and security threats. Do not solely depend on client-side validation, as it can create security vulnerabilities. Relying solely on client-side validation can introduce security vulnerabilities in the application. This is because client-side validation can be bypassed or manipulated by malicious users, since the validation code is running on the user's machine and is therefore under their control.
+    
+    For example, an attacker can simply disable or modify the client-side validation code using browser developer tools. They can also send unauthorized requests to the server, bypassing the client-side validation altogether. In either case, the server assumes the data passed through client-side validation and processes it with the assumption that it is valid. This can lead to the introduction of vulnerabilities such as SQL injections, path traversals, and other security issues.
+
+    Therefore, it is important to implement server-side validation in addition to client-side validation to ensure a more secure application.
 
     **[⬆ Back to Top](#table-of-contents)**
 
