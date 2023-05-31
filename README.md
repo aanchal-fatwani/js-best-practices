@@ -13,7 +13,7 @@
 | 7   | [Beware of Automatic Type Conversions](#beware-of-automatic-type-conversions)                                         |
 | 8   | [Use Parameter Defaults](#use-parameter-defaults)                                         |
 | 9   | [End Your Switches with Defaults](#end-your-switches-with-defaults)                                         |
-| 10   | [Avoid Number, String, and Boolean as Objects](#avoid-number-string-and-boolean-as-objects)                                         |
+| 10   | [Use Static Types with TypeScript or Flow](#use-static-types-with-typescript-or-flow) |
 | 11   | [Avoid Using eval](#avoid-using-eval)                                         |
 | 12   | [Call things by their name](#call-things-by-their-name)                                         |
 | 13   | [Stick to a strict coding style](#stick-to-a-strict-coding-style)                                         |
@@ -81,7 +81,6 @@
 | 75   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 | 76   | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
 | 77   | [Use the Proxy Object to Intercept Object Operations](#use-the-proxy-object-to-intercept-object-operations) |
-| 78   | [Use Static Types with TypeScript or Flow](#use-static-types-with-typescript-or-flow) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -122,6 +121,8 @@
     - Use /()/ instead of new RegExp()
     - Use function(){} instead of new Function()
 
+    Primitive values, such as numbers, strings, and booleans, should be treated as primitive data types and not as objects to optimize the execution speed and avoid side-effects.
+
     Suppose we have a constructor function named Person that initializes a person object with a name and age property.
 
         function Person(name, age) {
@@ -159,13 +160,13 @@
 
       **[⬆ Back to Top](#table-of-contents)**
 
-      
-10. ### Avoid Number, String, and Boolean as Objects
-    Primitive values, such as numbers, strings, and booleans, should be treated as primitive data types and not as objects to optimize the execution speed and avoid side-effects.
+10. ### Use Static Types with TypeScript or Flow 
+    In JavaScript, we have two popular static typing options, TypeScript and Flow. Both of these help us catch errors early on and greatly improve code quality.
+    When working with large codebases and complex functions, static typing can greatly increase the maintainability and quality of code. By using TypeScript (or Flow), not only can you catch errors early, but you can also greatly improve code completion and documentation, making it easier for yourself and other developers to understand the code and maintain it over time.
 
-      **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-      
+
 11. ### Avoid Using eval()
     Avoid using the eval() function, as it poses security risks by allowing arbitrary code to be executed.
 
@@ -747,12 +748,5 @@
         userProxy.firstName = 'Jane'; // Throws "Cannot modify first name" error
         userProxy.age = 25; // Adds the "age" property to the user object
         console.log(userProxy.age); // 25
-
-    **[⬆ Back to Top](#table-of-contents)**
-
-
-78. ### Use Static Types with TypeScript or Flow 
-    In JavaScript, we have two popular static typing options, TypeScript and Flow. Both of these help us catch errors early on and greatly improve code quality.
-    When working with large codebases and complex functions, static typing can greatly increase the maintainability and quality of code. By using TypeScript (or Flow), not only can you catch errors early, but you can also greatly improve code completion and documentation, making it easier for yourself and other developers to understand the code and maintain it over time.
 
     **[⬆ Back to Top](#table-of-contents)**
