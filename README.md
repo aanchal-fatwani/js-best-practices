@@ -304,13 +304,29 @@
 
 
 25. ### Avoid Overloading HTML and Use Templates Instead
-    Use an HTML template and load it via Ajax instead of manipulating a document with innerHTML, which can cause flakiness, especially with certain browsers.
+    Use an HTML template and load it via Ajax instead of manipulating a document with innerHTML, which can cause flakiness, especially with certain browsers. This is because loading HTML via Ajax and manipulating the DOM directly with innerHTML can cause issues with performance, security, and browser compatibility.
+    Use HTML templates and load them via Ajax. This involves separating the HTML markup from the JavaScript code, so you can manipulate the data and content without affecting the structure of the document.
+
+    Templates can be created using various JavaScript libraries and frameworks such as Handlebars, Mustache, and React. These libraries allow you to write HTML-like syntax that can be rendered to the DOM at runtime. 
+
+        // Define a template using Handlebars syntax
+        var template = Handlebars.compile("<h1>{{title}}</h1><p>{{content}}</p>");
+
+        // Define some data to be inserted into the template
+        var data = { title: "Hello World", content: "Lorem ipsum dolor sit amet." };
+
+        // Render the template to a DOM element
+        var rendered = template(data);
+        document.getElementById("my-div").innerHTML = rendered;
+
+    Additionally, we should avoid the pitfalls of using innerHTML, which may lead to security vulnerabilities, cross-site scripting (XSS) attacks, and other issues.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
 26. ### Make use of JS libraries
-    Use a JS library to develop web applications since the code would have fewer issues and reduce the number of bugs while maintaining the standards.
+    Use a JS library to develop web applications since the code would have fewer issues and reduce the number of bugs while maintaining the standards. 
+    JavaScript libraries such as jQuery, React, and Vue are widely used in web application development as they provide pre-built code modules and functions that can be easily integrated into your application. This allows developers to focus on building the core functionality of their applications rather than worrying about low-level implementation details.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -341,6 +357,7 @@
 
 31. ### Use native methods to Build a String
     Use native methods like join() instead of a for statement when looping through arrays to make your code faster.
+    In addition to the join() method, there are many other native methods available in the String prototype that can be used to manipulate strings. Some examples include slice(), substring(), toLowerCase(), and toUpperCase(). Choosing to use these native methods over writing custom string manipulation methods can lead to faster and more maintainable code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
