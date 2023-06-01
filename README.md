@@ -59,7 +59,7 @@
 | 53   | [Use Class Syntax for Object-Oriented Programming](#use-class-syntax-for-object-oriented-programming)                                         |
 | 54   | [Use the Fetch API for HTTP Requests](#use-the-fetch-api-for-http-requests)                                         |
 | 55   | [Use Linters](#use-linters)                                         |
-| 56   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing)                                         |
+| 56   | [Use the Proxy Object to Intercept Object Operations](#use-the-proxy-object-to-intercept-object-operations) |
 | 57   | [Use Server-Side Rendering for Improved Performance](#use-server-side-rendering-for-improved-performance)                                         |
 | 58   | [Use Event Delegation](#use-event-delegation)                                         |
 | 59   | [Use Memoization to Improve Performance](#use-memoization-to-improve-performance)                                         |
@@ -80,7 +80,6 @@
 | 74   | [Use Error-First Callbacks](#use-error-first-callbacks)           |
 | 75   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 | 76   | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
-| 77   | [Use the Proxy Object to Intercept Object Operations](#use-the-proxy-object-to-intercept-object-operations) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -510,8 +509,38 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-56. ### Use File-Based Routing instead of URL Routing
-    Use File-Based Routing instead of URL Routing to make code simpler and more maintainable.
+56. ### Use the Proxy Object to Intercept Object Operations 
+    Use the Proxy object to intercept object operations and customize their behavior. This can be useful for adding validation or access control to objects.
+
+    const user = {
+        firstName: 'John',
+        lastName: 'Doe',
+        password: 'secret'
+        };
+
+        const userProxy = new Proxy(user, {
+        get(target, property) {
+            if (property === 'password') {
+            throw new Error('Access denied');
+            } else {
+            return target[property];
+            }
+        },
+        set(target, property, value) {
+            if (property === 'firstName') {
+            throw new Error('Cannot modify first name');
+            } else {
+            target[property] = value;
+            }
+        }
+        });
+
+        console.log(userProxy.firstName); // "John"
+        console.log(userProxy.lastName); // "Doe"
+        console.log(userProxy.password); // Throws "Access denied" error
+        userProxy.firstName = 'Jane'; // Throws "Cannot modify first name" error
+        userProxy.age = 25; // Adds the "age" property to the user object
+        console.log(userProxy.age); // 25
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -729,41 +758,5 @@
         reportGenerator(() => {
         console.log('Report generation complete.');
         });
-
-    **[⬆ Back to Top](#table-of-contents)**
-
-
-77. ### Use the Proxy Object to Intercept Object Operations 
-    Use the Proxy object to intercept object operations and customize their behavior. This can be useful for adding validation or access control to objects.
-
-    const user = {
-        firstName: 'John',
-        lastName: 'Doe',
-        password: 'secret'
-        };
-
-        const userProxy = new Proxy(user, {
-        get(target, property) {
-            if (property === 'password') {
-            throw new Error('Access denied');
-            } else {
-            return target[property];
-            }
-        },
-        set(target, property, value) {
-            if (property === 'firstName') {
-            throw new Error('Cannot modify first name');
-            } else {
-            target[property] = value;
-            }
-        }
-        });
-
-        console.log(userProxy.firstName); // "John"
-        console.log(userProxy.lastName); // "Doe"
-        console.log(userProxy.password); // Throws "Access denied" error
-        userProxy.firstName = 'Jane'; // Throws "Cannot modify first name" error
-        userProxy.age = 25; // Adds the "age" property to the user object
-        console.log(userProxy.age); // 25
 
     **[⬆ Back to Top](#table-of-contents)**
