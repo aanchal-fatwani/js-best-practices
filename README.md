@@ -370,6 +370,24 @@
 33. ### Don't Pass a String to setInterval or setTimeOut
     Instead, pass a function name to avoid inefficient code and reduce the chances of errors. 
 
+    When we pass a string, it gets evaluated in a global scope and it is difficult to debug code. It also creates a slight overhead as the string has to be evaluated within the global scope, which can impact the performance of your application. 
+
+    On the other hand, when we pass a function name, it directly invokes the function, and there is no overhead of string evaluation. This makes the code more efficient and less prone to errors.
+
+    ```javascript
+    // Not Recommended Way (String Method)
+    setTimeout('alert("Hello World!")', 500);
+
+    // Recommended Way (Function Method)
+    setTimeout(() => {
+        alert("Hello World!");
+    }, 500);
+    ```
+
+    In this example, we are using the `setTimeout` method to display an alert message after 500 milliseconds. In the first example, we pass a string as a parameter to the `setTimeout` method, which will execute the code `"alert('Hello World!')"` after 500 milliseconds. This is not recommended because the string has to be evaluated in a global scope and it can be error-prone.
+
+    In the second example, we pass an anonymous function as a parameter to the `setTimeout` method. This is the recommended way because it directly invokes the function, and there is no overhead of string evaluation. Additionally, the use of an anonymous function allows for more flexibility and provides a cleaner and more readable code.
+
     **[⬆ Back to Top](#table-of-contents)**
 
 
