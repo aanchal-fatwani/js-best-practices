@@ -29,7 +29,7 @@
 | 23   | [Don’t write code specific to a certain browser](#dont-write-code-specific-to-a-certain-browser)                                         |
 | 24   | [Validate data](#validate-data)                                         |
 | 25   | [Avoid overloading HTML and Use Templates Instead](#avoid-overloading-html-and-use-templates-instead)                                         |
-| 26   | [Make use of JS libraries](#make-use-of-js-libraries)                                         |
+| 26   | [Carefully decide to make use of JS libraries or work with raw JS](#carefully-decide-to-make-use-of-JS-libraries-or-work-with-raw-js)                                      |
 | 27   | [Build the code developer friendly](#build-the-code-developer-friendly)                                         |
 | 28   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
 | 29   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
@@ -42,7 +42,7 @@
 | 36   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 37   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 38   | [Use Self-Executing Functions](#use-self-executing-functions)                                         |
-| 39   | [Use Raw JavaScript instead of Libraries wherever possible](#use-raw-javascript-instead-of-libraries-wherever-possible)                                         |
+| 39   | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
 | 40   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
 | 41   | [Make use of Iterators and for ... of Loops](#make-use-of-iterators-and-for--of-loops)                                         |
 | 42   | [Use async and await](#use-async-and-await)                                         |
@@ -79,7 +79,6 @@
 | 73   | [Use Multiple `.catch()` statements for Promises](#use-multiple-catch-statements-for-promises) |
 | 74   | [Use Error-First Callbacks](#use-error-first-callbacks)           |
 | 75   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
-| 76   | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -323,9 +322,14 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-26. ### Make use of JS libraries
-    Use a JS library to develop web applications since the code would have fewer issues and reduce the number of bugs while maintaining the standards. 
-    JavaScript libraries such as jQuery, React, and Vue are widely used in web application development as they provide pre-built code modules and functions that can be easily integrated into your application. This allows developers to focus on building the core functionality of their applications rather than worrying about low-level implementation details.
+26. ### Carefully decide to make use of JS libraries or work with raw JS
+    The decision to use JavaScript libraries or raw JavaScript depends on the project requirements and your team's expertise.
+
+    JS libraries are prewritten codes that are developed to handle a specific task, like DOM manipulation, AJAX requests, CSS animations, etc. This allows developers to focus on building the core functionality of their applications rather than worrying about low-level implementation details. They can significantly reduce development time, eliminate the need for duplicate coding effort, and provide better code consistency and quality.
+
+    On the other hand, using raw JavaScript can optimize page load times and improve performance by avoiding the external library files. Raw JavaScript also offers greater control, flexibility, and customization options than what a library can provide.
+
+    In conclusion, both libraries and raw JavaScript have their advantages and disadvantages. Evaluate project requirements, performance, load times, team expertise, and desired outcomes to make a decision that fits best for your project.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -404,7 +408,7 @@
 
 
 36. ### Use the Spread Operator
-    Use the spread operator (...) to insert all values from one array into another or pass all items of an array as individual elements to another function. It can also be used for  copying objects and arrays, rather than using Object.assign or slice methods.
+    Use the spread operator (...) to insert all values from one array into another or pass all items of an array as individual elements to another function. It can also be used for copying objects and arrays, rather than using Object.assign or slice methods.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -412,17 +416,82 @@
 37. ### Be Careful With for ... in Statements
     When using a for...in loop to loop through an object, filter out method functions (such as hasOwnProperty) and other inherited properties by wrapping the code in an if statement.
 
+    ```
+    const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+        hasOwnProperty: function() {
+            // This is a method function
+        },
+        toString: Object.prototype.toString
+        };
+
+    for (let key in obj) {
+        if (typeof obj[key] !== "function" && key !== "hasOwnProperty" && key !== "toString") {
+            console.log(key, obj[key]);
+        }
+    }
+    ```
+
+    Filtering out method functions and other inherited properties can make your code more readable and maintainable.
+
     **[⬆ Back to Top](#table-of-contents)**
 
 
 38. ### Use Self-Executing Functions
-    Make use of self-executing functions to run a function automatically when a page loads or a parent function is called.
+    Make use of self-executing functions to run a function automatically when a page loads or a parent function is called. This approach can be beneficial as it ensures that the code runs immediately, without having to be called elsewhere in the code.
+
+    Using self-executing functions can also help avoid conflicts with other scripts, global variables and namespace issues, particularly when dealing with libraries or code that contains lots of functions.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-39. ### Use Raw JavaScript instead of Libraries wherever possible
-    Libraries can save time but raw JavaScript is always faster.
+39. ### Use Event Emitters instead of Callbacks
+    While using callbacks work perfectly fine in a small codebase, it can lead to callback hell, which becomes difficult to maintain and debug as the codebase grows. Using event emitters will improve code maintainability, readability, and prevent callback hell.
+
+    Using Event Emiitter
+        const EventEmitter = require('events');
+
+        const eventEmitter = new EventEmitter();
+
+        const processReport = (report) => {
+        console.log(`Report processed: ${report}`);
+        };
+
+        // Registering the event with a callback function
+        eventEmitter.on('processReport', processReport);
+
+        const reportGenerator = () => {
+        // Generate report
+        const report = 'Some report';
+
+        // Emitting the event with report as the parameter
+        eventEmitter.emit('processReport', report);
+        }
+
+        // Generating the report
+        reportGenerator();
+ 
+    Using Callbacks
+        const processReport = (report, callback) => {
+        // Do some processing
+        console.log(`Report processed: ${report}`);
+        // Call the callback function once processing is done
+        return callback();
+        }
+
+        const reportGenerator = (callback) => {
+        // Generate report
+        const report = 'Some report';
+        // Process the report with a callback
+        processReport(report, callback);
+        }
+
+        // Generating the report with a callback
+        reportGenerator(() => {
+        console.log('Report generation complete.');
+        });
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -686,8 +755,6 @@
         }
     });
 
-
-
     **[⬆ Back to Top](#table-of-contents)**
 
 
@@ -727,54 +794,5 @@
         }
 
         makeApiRequest();
-
-    **[⬆ Back to Top](#table-of-contents)**
-
-
-76. ### Use Event Emitters instead of Callbacks
-    While using callbacks work perfectly fine in a small codebase, it can lead to callback hell, which becomes difficult to maintain and debug as the codebase grows. Using event emitters will improve code maintainability, readability, and prevent callback hell.
-
-    Using Event Emiitter
-        const EventEmitter = require('events');
-
-        const eventEmitter = new EventEmitter();
-
-        const processReport = (report) => {
-        console.log(`Report processed: ${report}`);
-        };
-
-        // Registering the event with a callback function
-        eventEmitter.on('processReport', processReport);
-
-        const reportGenerator = () => {
-        // Generate report
-        const report = 'Some report';
-
-        // Emitting the event with report as the parameter
-        eventEmitter.emit('processReport', report);
-        }
-
-        // Generating the report
-        reportGenerator();
- 
-    Using Callbacks
-        const processReport = (report, callback) => {
-        // Do some processing
-        console.log(`Report processed: ${report}`);
-        // Call the callback function once processing is done
-        return callback();
-        }
-
-        const reportGenerator = (callback) => {
-        // Generate report
-        const report = 'Some report';
-        // Process the report with a callback
-        processReport(report, callback);
-        }
-
-        // Generating the report with a callback
-        reportGenerator(() => {
-        console.log('Report generation complete.');
-        });
 
     **[⬆ Back to Top](#table-of-contents)**
