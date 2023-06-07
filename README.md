@@ -37,8 +37,8 @@
 | 31   | [Use native methods to Build a String](#use-native-methods-to-build-a-string)                                         |
 | 32   | [Use Template Literals](#use-template-literals)                                         |
 | 33   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
-| 34   | [Use {} Instead of new Object()](#use--instead-of-new-object())                                         |
-| 35   | [Use [] Instead of new Array()](#use--instead-of-new-array())                                         |
+| 34   | [Use object literals and arrays instead of constructors](#use-object-literals-and-arrays-instead-of-constructors)                                         |
+| 35   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 | 36   | [Use the Spread Operator](#use-the-spread-operator)                                         |
 | 37   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
 | 38   | [Use Self-Executing Functions](#use-self-executing-functions)                                         |
@@ -78,7 +78,6 @@
 | 72   | [Use File-Based Routing instead of URL Routing](#use-file-based-routing-instead-of-url-routing) |
 | 73   | [Use Multiple `.catch()` statements for Promises](#use-multiple-catch-statements-for-promises) |
 | 74   | [Use Error-First Callbacks](#use-error-first-callbacks)           |
-| 75   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 
 1. ### Minimize the use of Global Variables and Functions
     Global variables and functions can conflict with other code libraries, can be overwritten and cause issues. Functions can be placed in a module or namespace. For variables, local variables or closures can be used instead.
@@ -395,14 +394,53 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-34. ### Use {} Instead of new Object()
-    Use object literals instead of the new constructor method to create objects in JavaScript since it is a more straightforward process.
+34. ### Use object literals and arrays instead of constructors 
+    Object literals and arrays are a more straightforward way to create objects and arrays in JavaScript than using the new constructor method.
+    Use {} Instead of new Object() and use [] Instead of new Array() as when using the new constructor method in JavaScript, there are a few potential pitfalls to be aware of.
+
+    One common issue is with accidental type coercion. When using new with a non-primitive value (like an object or array), the new keyword can cause unexpected type coercion. For example, if you accidentally omit the new keyword when creating a new instance of an object using a constructor function, the this keyword inside the constructor will refer to the global object instead of the new object you intended to create, which can lead to unintended consequences in your code.
+
+    Additionally, the new keyword can add a bit of extra complexity and confusion when creating objects or arrays. By using object literals ({}) or array literals ([]) instead of the new constructor notation, you can simplify your code and make it easier to understand.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-35. ### Use [] Instead of new Array()
-    Use [] to create a new array instead of the new Array() constructor to improve code readability.
+35. ### Use SetTimeout instead of SetInterval
+    Use the SetTimeout function instead of SetInterval to prevent performance issues. It's generally better to use setTimeout when the processing time of each iteration of the task cannot be predicted or when there is asynchronous code involved.
+
+    Using setInterval
+    function makeApiRequest() {
+        fetch('https://example.api.com/data')
+            .then(response => response.json())
+            .then(data => {
+            // Process data here
+            console.log(data);
+            })
+            .catch(error => {
+            console.error('Error fetching data:', error);
+            });
+        }
+
+        setInterval(makeApiRequest, 5000);
+
+    Using setTimeout
+    function makeApiRequest() {
+        fetch('https://example.api.com/data')
+            .then(response => response.json())
+            .then(data => {
+            // Process data here
+            console.log(data);
+            })
+            .catch(error => {
+            console.error('Error fetching data:', error);
+            })
+            .finally(() => {
+            // Make the next request after 5 seconds
+            setTimeout(makeApiRequest, 5000);
+            });
+        }
+
+        makeApiRequest();
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -754,45 +792,5 @@
         console.log(`Fetched data: ${data}`);
         }
     });
-
-    **[⬆ Back to Top](#table-of-contents)**
-
-
-75. ### Use SetTimeout instead of SetInterval
-    Use the SetTimeout function instead of SetInterval to prevent performance issues. It's generally better to use setTimeout when the processing time of each iteration of the task cannot be predicted or when there is asynchronous code involved.
-
-    Using setInterval
-    function makeApiRequest() {
-        fetch('https://example.api.com/data')
-            .then(response => response.json())
-            .then(data => {
-            // Process data here
-            console.log(data);
-            })
-            .catch(error => {
-            console.error('Error fetching data:', error);
-            });
-        }
-
-        setInterval(makeApiRequest, 5000);
-
-    Using setTimeout
-    function makeApiRequest() {
-        fetch('https://example.api.com/data')
-            .then(response => response.json())
-            .then(data => {
-            // Process data here
-            console.log(data);
-            })
-            .catch(error => {
-            console.error('Error fetching data:', error);
-            })
-            .finally(() => {
-            // Make the next request after 5 seconds
-            setTimeout(makeApiRequest, 5000);
-            });
-        }
-
-        makeApiRequest();
 
     **[⬆ Back to Top](#table-of-contents)**
