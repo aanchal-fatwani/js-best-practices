@@ -489,8 +489,8 @@
     While using callbacks work perfectly fine in a small codebase, it can lead to callback hell, which becomes difficult to maintain and debug as the codebase grows. Using event emitters will improve code maintainability, readability, and prevent callback hell.
 
     Using Event Emiitter
+    
         const EventEmitter = require('events');
-
         const eventEmitter = new EventEmitter();
 
         const processReport = (report) => {
@@ -512,6 +512,7 @@
         reportGenerator();
  
     Using Callbacks
+    
         const processReport = (report, callback) => {
         // Do some processing
         console.log(`Report processed: ${report}`);
