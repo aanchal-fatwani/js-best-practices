@@ -638,10 +638,10 @@
 56. ### Use the Proxy Object to Intercept Object Operations 
     Use the Proxy object to intercept object operations and customize their behavior. This can be useful for adding validation or access control to objects.
 
-    const user = {
-        firstName: 'John',
-        lastName: 'Doe',
-        password: 'secret'
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+            password: 'secret'
         };
 
         const userProxy = new Proxy(user, {
