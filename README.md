@@ -542,6 +542,31 @@
 
 41. ### Make use of Iterators and for ... of Loops
     Iterators in JavaScript are objects which implement the next() method to return an object that stores the next value in a sequence and true or false depending on whether or not there are any more values left. JavaScript also has some built-in iterators like String, Array, Map, etc. You can iterate over them using for ... of loops. 
+
+        const arr = [1, 2, 3, 4, 5];
+
+    // Using for loops
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    
+    // Using for...of loop
+        for (const item of arr) {
+            console.log(item);
+        }
+
+    // Using iterators
+        const mySet = new Set([1, 2, 3, 4, 5]);
+
+        // create an iterator object using the `values()` method
+        const setIterator = mySet.values();
+
+        let nextValue = setIterator.next();
+
+        while (!nextValue.done) {
+            console.log(nextValue.value);
+            nextValue = setIterator.next();
+        }
     
     Use iterators and for...of loops for more concise and less error-prone code.
 
@@ -549,7 +574,7 @@
 
 
 42. ### Use async and await
-    Promises can be used for Asynchronous Code to avoid callback hell. Asynchronous functions can be created with the async keyword and take advantage of the await keyword to stop execution until the resolution of returned promises. Use async and await keywords for cleaner, more readable asynchronous code.
+    Promises can be used for Asynchronous Code to avoid callback hell. Also, asynchronous functions can be created with the async keyword and take advantage of the await keyword to stop execution until the resolution of returned promises. Use async and await keywords for cleaner, more readable asynchronous code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -557,7 +582,7 @@
 43. ### Use Arrow Functions more
     Use arrow functions for more readable and concise functional JavaScript code.
 
-    Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the this keyword. There are no bindings for this in the arrow functions. 'this' has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
+    Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the 'this' keyword. There are no bindings for 'this' in the arrow functions. 'this' has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -577,6 +602,16 @@
 46. ### Use Regex When Extracting or Working With Strings
     Use regex instead of complicated string manipulation methods like indexOf() and substring().
 
+    const myString = "I love my dog";
+
+    // Using indexOf
+    const containsDog = myString.indexOf("dog") !== -1;
+
+    // Using regex
+    const containsDog = /dog/.test(myString);
+
+    console.log(containsDog) // true
+
     **[⬆ Back to Top](#table-of-contents)**
 
 
@@ -588,6 +623,30 @@
 
 48. ### Use Splice to Remove Items From an Array
     Use splice() to remove elements from an array instead of the delete method.
+
+    The `delete` method removes the specified element from an array by setting it to undefined. It does not actually remove the element from the array. This means that the array length does not change and the deleted element is replaced with `undefined`.
+
+    ```javascript
+    const myArray = ["apple", "banana", "orange"];
+    delete myArray[1];
+
+    console.log(myArray); // ["apple", undefined, "orange"]
+    ```
+
+    Note that the length of `myArray` is still 3, and the element at index 1 is now `undefined`.
+
+    On the other hand, `splice()` method modifies the contents of an array by removing or replacing existing elements and/or adding new elements. It can remove one or more elements from an array and returns the removed elements as a new array. When we use `splice()`, we can completely remove an element from the array by manipulating the original array. This means that the length of the array is updated and the array is re-indexed.
+
+    ```javascript
+    const myArray = ["apple", "banana", "orange"];
+    myArray.splice(1, 1);
+
+    console.log(myArray); // ["apple", "orange"]
+    ```
+
+    In this example, we use `splice()` to remove the element at index 1 (which is "banana") from the array. As a result, the length of the array is now 2 and the element at index 1 is "orange".
+
+    In conclusion, `splice()` method should be used to remove elements from an array instead of `delete` method because `splice()` method can completely remove an element from an array and update its length and indices. On the other hand, `delete` method only sets the element to `undefined`, leaving its place in the array with an gap of `undefined`. Therefore, `splice()` method provides a cleaner and more consistent way of manipulating arrays.
 
     **[⬆ Back to Top](#table-of-contents)**
 
