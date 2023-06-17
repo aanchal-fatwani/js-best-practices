@@ -64,7 +64,7 @@
 | 58   | [Use Event Delegation](#use-event-delegation)                                         |
 | 59   | [Use Memoization to Improve Performance](#use-memoization-to-improve-performance)                                         |
 | 60   | [Use Web Workers](#use-web-workers)                                         |
-| 61   | [Use the Object.assign Method for Object Composition](#use-the-object.assign-method-for-object-composition)                                                 |
+| 61   | [Use the Object.assign Method for Object Composition](#use-the-objectassign-method-for-object-composition)                                                 |
 | 62   | [Use Web Components for Reusable UI Elements](#use-web-components-for-reusable-ui-elements)                                                 |
 | 63   | [Use DRY (Don't Repeat Yourself) Principle](#use-dry-dont-repeat-yourself-principle)                                                 |
 | 64   | [Use Error Handling](#use-error-handling)                                                 |
@@ -695,13 +695,12 @@
     Another benefit of using class syntax is that it is easier to extend and subclass classes. Classes created with the class syntax can easily be extended and overridden by creating new classes that inherit from them. This inheritance can be achieved using the extends keyword.
 
     Here's an example of creating a simple class using class syntax and instantiating an object:
-
+    ```
     class Person {
         constructor(name, age) {
             this.name = name;
             this.age = age;
         }
-
         sayHello() {
             console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
         }
@@ -709,6 +708,7 @@
 
     const john = new Person('John', 30);
     john.sayHello();
+    ```
 
     In this example, we defined a Person class with a constructor that initializes the name and age properties of a Person object. We also defined a sayHello method that logs a greeting message to the console. We then instantiated a john object from the Person class and called the sayHello method on it.
 
