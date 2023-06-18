@@ -20,12 +20,12 @@
 | 14   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 | 15   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 | 16   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
-| 17   | [Modularize - one function per task](#modularizeone-function-per-task)                                         |
+| 17   | [Modularize - one function per task](#modularize-one-function-per-task)                                         |
 | 18   | [Enhance progressively](#enhance-progressively)                                         |
 | 19   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 | 20   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
 | 21   | [Optimize loops](#optimize-loops)                                         |
-| 22   | [Keep DOM access to a minimum](#keep-DOM-access-to-a-minimum)                                         |
+| 22   | [Keep DOM access to a minimum](#keep-dom-access-to-a-minimum)                                         |
 | 23   | [Don’t write code specific to a certain browser](#dont-write-code-specific-to-a-certain-browser)                                         |
 | 24   | [Validate data](#validate-data)                                         |
 | 25   | [Avoid overloading HTML and Use Templates Instead](#avoid-overloading-html-and-use-templates-instead)                                         |
@@ -197,7 +197,7 @@
 
 
 13. ### Stick to a strict coding style
-    This will help reduce the potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released. Use 'use strict' to enforce stricter syntax and avoid potential errors.
+    This will help reduce potential bugs, improve code security, and make it easier for other developers to understand the code. Avoid relying on hacks that may later become outdated as new browser versions are released. Use 'use strict' to enforce stricter syntax and avoid potential errors.
 
       **[⬆ Back to Top](#table-of-contents)**
 
@@ -221,7 +221,7 @@
 
 
 17. ### Modularize - one function per task
-    Break down tasks into smaller functions, and create helper functions for repetitive tasks, which makes the code smaller, manageable, and easy to debug. Function composition helps to organize code into small and modular functions. Avoid creating long chains of functions that can make code difficult to understand and debug. Instead of chaining all of the functions together in one long chain, it's better to break them up into separate functions and calling them individually.
+    Break down tasks into smaller functions, and create helper functions for repetitive tasks, which makes the code smaller, manageable, and easy to debug. Function composition helps to organize code into small and modular functions. Avoid creating long chains of functions that can make code difficult to understand and debug. Instead of chaining all of the functions together in one long chain, it's better to break them up into separate functions and call them individually.
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -291,7 +291,7 @@
 
 
 24. ### Validate data
-    Avoid relying on invalid data, validate it before using it to avoid glitches and security threats. Do not solely depend on client-side validation, as it can create security vulnerabilities. Relying solely on client-side validation can introduce security vulnerabilities in the application. This is because client-side validation can be bypassed or manipulated by malicious users, since the validation code is running on the user's machine and is therefore under their control.
+    Avoid relying on invalid data, validate it before using it to avoid glitches and security threats. Do not solely depend on client-side validation, as it can create security vulnerabilities. Relying solely on client-side validation can introduce security vulnerabilities in the application. This is because client-side validation can be bypassed or manipulated by malicious users since the validation code is running on the user's machine and is therefore under their control.
     
     For example, an attacker can simply disable or modify the client-side validation code using browser developer tools. They can also send unauthorized requests to the server, bypassing the client-side validation altogether. In either case, the server assumes the data passed through client-side validation and processes it with the assumption that it is valid. This can lead to the introduction of vulnerabilities such as SQL injections, path traversals, and other security issues.
 
