@@ -29,7 +29,7 @@
 | 23   | [Don’t write code specific to a certain browser](#dont-write-code-specific-to-a-certain-browser)                                         |
 | 24   | [Validate data](#validate-data)                                         |
 | 25   | [Avoid overloading HTML and Use Templates Instead](#avoid-overloading-html-and-use-templates-instead)                                         |
-| 26   | [Carefully decide to make use of JS libraries or work with raw JS](#carefully-decide-to-make-use-of-JS-libraries-or-work-with-raw-js)                                      |
+| 26   | [Carefully decide to make use of JS libraries or work with raw JS](#carefully-decide-to-make-use-of-js-libraries-or-work-with-raw-js)                                      |
 | 27   | [Build the code developer friendly](#build-the-code-developer-friendly)                                         |
 | 28   | [Don't Use Shorthand](#dont-use-shorthand)                                         |
 | 29   | [Place Scripts at the Bottom of Your Page](#place-scripts-at-the-bottom-of-your-page)                                         |
@@ -50,7 +50,7 @@
 | 44   | [Make use of the JavaScript includes() Method](#make-use-of-the-javascript-includes-method)                                         |
 | 45   | [Run Promises in Parallel](#run-promises-in-parallel)                                         |
 | 46   | [Use Regex When Extracting or Working With Strings](#use-regex-when-extracting-or-working-with-strings)                                         |
-| 47   | [Put JavaScript in a Separate File](#put-javaScript-in-a-separate-file)                                         |
+| 47   | [Put JavaScript in a Separate File](#put-javascript-in-a-separate-file)                                         |
 | 48   | [Use Splice to Remove Items From an Array](#use-splice-to-remove-items-from-an-array)                                         |
 | 49   | [Incorporate Testing](#incorporate-testing)                                         |
 | 50   | [Use Object.freeze to Create Immutable Objects](#use-objectfreeze-to-create-immutable-objects)                                         |
