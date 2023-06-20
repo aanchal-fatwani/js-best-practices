@@ -20,7 +20,7 @@
 | 14   | [Comment as much as needed but not more](#comment-as-much-as-needed-but-not-more)                                         |
 | 15   | [Avoid mixing CSS or styling with other technologies](#avoid-mixing-css-or-styling-with-other-technologies)                                         |
 | 16   | [Use shortcut notation when it makes sense](#use-shortcut-notation-when-it-makes-sense)                                         |
-| 17   | [Modularize - one function per task](#modularize-one-function-per-task)                                         |
+| 17   | [Modularize - one function per task](#modularize---one-function-per-task)                                         |
 | 18   | [Enhance progressively](#enhance-progressively)                                         |
 | 19   | [Allow for configuration and translation](#allow-for-configuration-and-translation)                                         |
 | 20   | [Avoid heavy nesting](#avoid-heavy-nesting)                                         |
@@ -36,11 +36,11 @@
 | 30   | [Declare Variables and Functions Outside of the Loops](#declare-variables-and-functions-outside-of-the-loops)                                         |
 | 31   | [Use native methods to Build a String](#use-native-methods-to-build-a-string)                                         |
 | 32   | [Use Template Literals](#use-template-literals)                                         |
-| 33   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setInterval-or-setTimeOut)                                         |
+| 33   | [Don't Pass a String to setInterval or setTimeOut](#dont-pass-a-string-to-setinterval-or-settimeout)                                         |
 | 34   | [Use object literals and arrays instead of constructors](#use-object-literals-and-arrays-instead-of-constructors)                                         |
 | 35   | [Use SetTimeout instead of SetInterval](#use-settimeout-instead-of-setinterval) |
 | 36   | [Use the Spread Operator](#use-the-spread-operator)                                         |
-| 37   | [Be Careful With for ... in Statements](#be-careful-with-for-in-statements)                                         |
+| 37   | [Be Careful With for ... in Statements](#be-careful-with-for--in-statements)                                         |
 | 38   | [Use Self-Executing Functions](#use-self-executing-functions)                                         |
 | 39   | [Use Event Emitters instead of Callbacks](#use-event-emitters-instead-of-callbacks) |
 | 40   | [Quickly Assign Variable Values With Destructuring](#quickly-assign-variable-values-with-destructuring)                                         |
