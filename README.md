@@ -389,7 +389,7 @@
 
     In this example, we are using the `setTimeout` method to display an alert message after 500 milliseconds. In the first example, we pass a string as a parameter to the `setTimeout` method, which will execute the code `"alert('Hello World!')"` after 500 milliseconds. This is not recommended because the string has to be evaluated in a global scope and it can be error-prone.
 
-    In the second example, we pass an anonymous function as a parameter to the `setTimeout` method. This is the recommended way because it directly invokes the function, and there is no overhead of string evaluation. Additionally, the use of an anonymous function allows for more flexibility and provides a cleaner and more readable code.
+    In the second example, we pass an anonymous function as a parameter to the `setTimeout` method. This is the recommended way because it directly invokes the function, and there is no overhead of string evaluation. Additionally, the use of an anonymous function allows for more flexibility and provides cleaner and more readable code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -398,7 +398,7 @@
     Object literals and arrays are a more straightforward way to create objects and arrays in JavaScript than using the new constructor method.
     Use {} Instead of new Object() and use [] Instead of new Array() as when using the new constructor method in JavaScript, there are a few potential pitfalls to be aware of.
 
-    One common issue is with accidental type coercion. When using new with a non-primitive value (like an object or array), the new keyword can cause unexpected type coercion. For example, if you accidentally omit the new keyword when creating a new instance of an object using a constructor function, the 'this' keyword inside the constructor will refer to the global object instead of the new object you intended to create, which can lead to unintended consequences in your code.
+    One common issue is accidental type coercion. When using new with a non-primitive value (like an object or array), the 'new' keyword can cause unexpected type coercion. For example, if you accidentally omit the new keyword when creating a new instance of an object using a constructor function, the 'this' keyword inside the constructor will refer to the global object instead of the new object you intended to create, which can lead to unintended consequences in your code.
 
     Additionally, the new keyword can add a bit of extra complexity and confusion when creating objects or arrays. By using object literals ({}) or array literals ([]) instead of the new constructor notation, you can simplify your code and make it easier to understand.
 
@@ -535,7 +535,7 @@
 
 
 41. ### Quickly Assign Variable Values With Destructuring
-    Use destructuring to extract values from objects and arrays easily. This allows us to avoid variable assignments for values we don't need. Also, destructuring assignment can be used for function arguments to make them more inline for readability.
+    Use destructuring to extract values from objects and arrays easily. This allows us to avoid variable assignments for values we don't need. Also, destructuring assignments can be used for function arguments to make them more in line for readability.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -646,7 +646,7 @@
 
     In this example, we use `splice()` to remove the element at index 1 (which is "banana") from the array. As a result, the length of the array is now 2 and the element at index 1 is "orange".
 
-    In conclusion, `splice()` method should be used to remove elements from an array instead of `delete` method because `splice()` method can completely remove an element from an array and update its length and indices. On the other hand, `delete` method only sets the element to `undefined`, leaving its place in the array with an gap of `undefined`. Therefore, `splice()` method provides a cleaner and more consistent way of manipulating arrays.
+    In conclusion, `splice()` method should be used to remove elements from an array instead of `delete` method because `splice()` method can completely remove an element from an array and update its length and indices. On the other hand, `delete` method only sets the element to `undefined`, leaving its place in the array with a gap of `undefined`. Therefore, `splice()` method provides a cleaner and more consistent way of manipulating arrays.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -710,7 +710,7 @@
     john.sayHello();
     ```
 
-    In this example, we defined a Person class with a constructor that initializes the name and age properties of a Person object. We also defined a sayHello method that logs a greeting message to the console. We then instantiated a john object from the Person class and called the sayHello method on it.
+    In this example, we defined a Person class with a constructor that initializes the name and age properties of a Person object. We also defined a sayHello method that logs a greeting message to the console. We then instantiated a 'John' object from the Person class and called the sayHello method on it.
 
     Using class syntax in your JavaScript code provides a more structured and familiar approach to OOP, making your code easier to read and maintain. It also promotes separation of concerns and enables easy extension of classes.
 
