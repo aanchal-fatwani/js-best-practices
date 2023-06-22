@@ -66,7 +66,7 @@
 | 60   | [Use Web Workers](#use-web-workers)                                         |
 | 61   | [Use the Object.assign Method for Object Composition](#use-the-objectassign-method-for-object-composition)                                                 |
 | 62   | [Use Web Components for Reusable UI Elements](#use-web-components-for-reusable-ui-elements)                                                 |
-| 63   | [Use DRY (Don't Repeat Yourself) Principle](#use-dry-dont-repeat-yourself-principle)                                                 |
+| 63   | [Use the DRY (Don't Repeat Yourself) Principle](#use-the-dry-dont-repeat-yourself-principle)                                                 |
 | 64   | [Use Error Handling](#use-error-handling)                                                 |
 | 65   | [Use Web Storage API for Data Storage](#use-web-storage-api-for-data-storage)                                                 |
 | 66   | [Use Factory Functions instead of Constructors](#use-factory-functions-instead-of-constructors)                                                 |
@@ -843,7 +843,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-64. ### Use DRY (Don't Repeat Yourself) Principle
+64. ### Use the DRY (Don't Repeat Yourself) Principle
     Avoid repeating the same code in multiple places. Instead, use functions, classes, or modules to encapsulate the commonly used code.
 
     **[⬆ Back to Top](#table-of-contents)**
