@@ -445,13 +445,13 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-37. ### Use the Spread Operator
+36. ### Use the Spread Operator
     Use the spread operator (...) to insert all values from one array into another or pass all items of an array as individual elements to another function. It can also be used for copying objects and arrays, rather than using Object.assign or slice methods.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-38. ### Be Careful With for ... in Statements
+37. ### Be Careful With for ... in Statements
     When using a for...in loop to loop through an object, filter out method functions (such as hasOwnProperty) and other inherited properties by wrapping the code in an if statement.
 
     ```
@@ -477,7 +477,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-39. ### Use Self-Executing Functions
+38. ### Use Self-Executing Functions
     Make use of self-executing functions to run a function automatically when a page loads or a parent function is called. This approach can be beneficial as it ensures that the code runs immediately, without having to be called elsewhere in the code.
 
     Using self-executing functions can also help avoid conflicts with other scripts, global variables and namespace issues, particularly when dealing with libraries or code that contains lots of functions.
@@ -485,7 +485,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-40. ### Use Event Emitters instead of Callbacks
+39. ### Use Event Emitters instead of Callbacks
     While using callbacks work perfectly fine in a small codebase, it can lead to callback hell, which becomes difficult to maintain and debug as the codebase grows. Using event emitters will improve code maintainability, readability, and prevent callback hell.
 
     Using Event Emiitter
@@ -534,13 +534,13 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-41. ### Quickly Assign Variable Values With Destructuring
+40. ### Quickly Assign Variable Values With Destructuring
     Use destructuring to extract values from objects and arrays easily. This allows us to avoid variable assignments for values we don't need. Also, destructuring assignments can be used for function arguments to make them more in line for readability.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-42. ### Make use of Iterators and for ... of Loops
+41. ### Make use of Iterators and for ... of Loops
     Iterators in JavaScript are objects which implement the next() method to return an object that stores the next value in a sequence and true or false depending on whether or not there are any more values left. JavaScript also has some built-in iterators like String, Array, Map, etc. You can iterate over them using for ... of loops. 
 
         const arr = [1, 2, 3, 4, 5];
@@ -573,13 +573,13 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-43. ### Use async and await
+42. ### Use async and await
     Promises can be used for Asynchronous Code to avoid callback hell. Also, asynchronous functions can be created with the async keyword and take advantage of the await keyword to stop execution until the resolution of returned promises. Use async and await keywords for cleaner, more readable asynchronous code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-44. ### Use Arrow Functions more
+43. ### Use Arrow Functions more
     Use arrow functions for more readable and concise functional JavaScript code.
 
     Another notable benefit of arrow functions is that they do not define a scope, instead being within the parent scope. This prevents many of the issues that can occur when using the 'this' keyword. There are no bindings for 'this' in the arrow functions. 'this' has the same value inside the arrow function as it does in the parent scope. However, this means arrow functions can't be used as constructors or methods.
@@ -587,19 +587,19 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-45. ### Make use of the Javascript includes() Method
+44. ### Make use of the Javascript includes() Method
     Use the includes() method to check if a string contains certain characters or if an array contains a specific element.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-46. ### Run Promises in Parallel
+45. ### Run Promises in Parallel
     Run asynchronous tasks in parallel using Promise.all(). It can make the app much faster and more responsive. 
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-47. ### Use Regex When Extracting or Working With Strings
+46. ### Use Regex When Extracting or Working With Strings
     Use regex instead of complicated string manipulation methods like indexOf() and substring().
 
     const myString = "I love my dog";
@@ -615,13 +615,13 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-48. ### Put JavaScript in a Separate File
+47. ### Put JavaScript in a Separate File
     Keeping JavaScript in a separate file makes it more organized, reusable, and easier for web browsers to cache.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-49. ### Use Splice to Remove Items From an Array
+48. ### Use Splice to Remove Items From an Array
     Use splice() to remove elements from an array instead of the delete method.
 
     The `delete` method removes the specified element from an array by setting it to undefined. It does not actually remove the element from the array. This means that the array length does not change and the deleted element is replaced with `undefined`.
@@ -651,25 +651,25 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-50. ### Incorporate Testing
+49. ### Incorporate Testing
     Testing is essential for catching bugs and preventing issues down the line. It ia also is essential for ensuring quality code and saving time and money during the development process. Use unit and integration tests to ensure your code is working as expected.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-51. ### Use Object.freeze to Create Immutable Objects
+50. ### Use Object.freeze to Create Immutable Objects
     Use Object.freeze() to create immutable objects which can't be modified or deleted. This can prevent bugs and improve performance.
     
     **[⬆ Back to Top](#table-of-contents)**
 
     
-52. ### Use the Map and Set Data Structures
+51. ### Use the Map and Set Data Structures
     The Map and Set data structures are powerful tools for handling data in JavaScript. They allow you to store data in key-value pairs and unique values, respectively. Use them where appropriate to simplify your code and improve performance. 
     
     **[⬆ Back to Top](#table-of-contents)**
 
 
-53. ### Avoid Using InnerHTML
+52. ### Avoid Using InnerHTML
     Avoid using innerHTML to modify the content of your web pages. This feature can cause unexpected behavior and security vulnerabilities, so use the DOM manipulation methods provided by the browser instead. 
 
     `innerHTML` is a property that allows developers to modify the HTML content of an element in the DOM by replacing the entire content of the element with new HTML code. While it is a convenient way to change the HTML content of a web page, there are several reasons why developers should avoid using `innerHTML`, and instead use the DOM manipulation methods provided by the browser.
@@ -687,7 +687,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-54. ### Use Class Syntax for Object-Oriented Programming
+53. ### Use Class Syntax for Object-Oriented Programming
     JavaScript class syntax provides a more familiar and structured approach to object-oriented programming. Use it where appropriate to simplify your code and make it more readable.
 
     One of the main benefits of using class syntax over the traditional constructor/prototype approach is that it encourages better code organization and promotes the separation of concerns. You can use class syntax to create modular, reusable, and extendable code.
@@ -717,19 +717,19 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-55. ### Use the Fetch API for HTTP Requests
+54. ### Use the Fetch API for HTTP Requests
     The Fetch API is a modern and powerful way to make HTTP requests in JavaScript. Use it instead of older and less secure techniques like XMLHttpRequest.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-56. ### Use Linters
+55. ### Use Linters
     Linters help ensure that your code follows best practices and style guidelines. Use a linter like ESLint to catch errors and enforce standards.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-57. ### Use the Proxy Object to Intercept Object Operations 
+56. ### Use the Proxy Object to Intercept Object Operations 
     Use the Proxy object to intercept object operations and customize their behavior. This can be useful for adding validation or access control to objects.
 
     const user = {
@@ -765,31 +765,31 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-58. ### Use Server-Side Rendering for Improved Performance
+57. ### Use Server-Side Rendering for Improved Performance
     Use server-side rendering to improve the initial load time and performance of your web application, especially for mobile devices with slower network speeds.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-59. ### Use Event Delegation
+58. ### Use Event Delegation
     Use event delegation to reduce the number of event listeners added to the page, reducing overhead, and improving performance.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-60. ### Use Memoization to Improve Performance
+59. ### Use Memoization to Improve Performance
     Use memoization to cache the results of expensive function calls, improving performance when the same calculation is needed later.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-61. ### Use Web Workers
+60. ### Use Web Workers
     Use web workers to offload heavy computation tasks to a separate thread, improving the responsiveness of your web application.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-62. ### Use the Object.assign Method for Object Composition
+61. ### Use the Object.assign Method for Object Composition
     The Object.assign method can be used to merge objects together to create new objects quickly and easily. This method is especially useful for composition-based programming.
 
     Object composition, also known as object aggregation or object delegation, is a programming technique that involves combining two or more objects to create a new object with the desired behavior and functionality. Instead of using inheritance to create new objects, composition-based programming uses existing objects to build new ones.
@@ -823,7 +823,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-63. ### Use Web Components for Reusable UI Elements
+62. ### Use Web Components for Reusable UI Elements
     Web Components are a set of web APIs that allow you to create reusable UI elements for web applications. Web Components provide encapsulation, making it possible for you to create isolated components with a scope that protects them from the rest of the web page. This isolation makes them an excellent choice for teams and developers who want to reuse UI elements that can be shared across multiple web applications. 
 
     Web Components consist of three main parts: 
@@ -843,25 +843,25 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-64. ### Use the DRY (Don't Repeat Yourself) Principle
+63. ### Use DRY (Don't Repeat Yourself) Principle
     Avoid repeating the same code in multiple places. Instead, use functions, classes, or modules to encapsulate the commonly used code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-65. ### Use Error Handling
+64. ### Use Error Handling
     Add proper error handling to your code to catch and handle errors in a graceful way. This can prevent crashes and improve the user experience.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-66. ### Use Web Storage API for Data Storage
+65. ### Use Web Storage API for Data Storage
     Use the Web Storage API to store data in the browser, reducing the need for network requests and improving the performance of your web application.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-67. ### Use Factory Functions instead of Constructors
+66. ### Use Factory Functions instead of Constructors
     In JavaScript, Factory functions are an alternative to constructors for creating objects. They provide a way to encapsulate and control the object creation process, and they allow for the creation of immutable objects.
 
     Factory functions are regular functions that return an object. You can pass parameters to the function to specify the initial state of the object, and the function can perform any necessary setup or validation before returning the object.
@@ -905,7 +905,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-68. ### Avoid Global Imports
+67. ### Avoid Global Imports
     Avoid Global Imports for Javascript Modules to prevent namespace pollution.
 
     In JavaScript, global imports can be used to bring in functionality from other modules, making it available to the entire program. However, this can lead to namespace pollution, where different modules can define variables and functions with the same name, causing unexpected behavior.
@@ -942,43 +942,43 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 
-69. ### Use Functional Programming Principles
+68. ### Use Functional Programming Principles
     Use functional programming principles like immutability, pure functions, and higher-order functions to make your code more robust, maintainable, and readable. Additionally, use functional programming techniques like map, filter, and reduce for data handling and currying and composition for event handling to improve code reuse and maintainability.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-70. ###  Use Promises Wisely
+69. ###  Use Promises Wisely
     Promises can be used for Asynchronous Code to avoid callback hell. Promises can simplify and improve your asynchronous code, but they should be used carefully. Avoid creating too many promises at once, and always handle errors properly.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-71. ### Use Performance Profiling Tools
+70. ### Use Performance Profiling Tools
     Use performance profiling tools like Chrome's DevTools to identify performance issues in your code.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-72. ### Use ES6 Modules
+71. ### Use ES6 Modules
     ES6 modules allow you to import and export code modules between files, reducing coupling and improving maintainability. Also, Default Exports can be used for Javascript Modules to keep the code cleaner and organized.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-73. ### Use File-Based Routing instead of URL Routing
+72. ### Use File-Based Routing instead of URL Routing
     Use File-Based Routing instead of URL Routing to make code simpler and more maintainable. It can also help to structure sub-routes better as within URL routing, it can create a scenario where to incorporate all the URLs can increase the length of the object and file.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-74. ### Use Multiple `.catch()` statements for Promises
+73. ### Use Multiple `.catch()` statements for Promises
     Use Multiple `.catch()` statements for Promises to handle errors easily and have clear error messages.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 
-75. ### Use Error-First Callbacks
+74. ### Use Error-First Callbacks
     By consistently using Error-First Callbacks throughout the application, we can handle errors in a standardized and consistent manner, making it easier to identify and debug issues. Additionally, by providing more meaningful error messages, we can make it easier for developers to understand and address any issues that may occur.
       const fetchData = (callback) => {
         axios.get('https://api.example.com/data')
