@@ -943,7 +943,19 @@
 
 
 68. ### Use Functional Programming Principles
-    Use functional programming principles like immutability, pure functions, and higher-order functions to make your code more robust, maintainable, and readable. Additionally, use functional programming techniques like map, filter, and reduce for data handling and currying and composition for event handling to improve code reuse and maintainability.
+    Functional programming is a programming paradigm that emphasizes the use of functions to define computation rather than imperative statements. It advocates for using immutability, pure functions, and higher-order functions as a means of developing robust, maintainable, and readable code.
+
+    Immutability, or the inability of objects to change after creation, is one of the fundamental principles of functional programming. It enables programs to be more predictable, easier to test, and less prone to errors. By using immutable objects, you can avoid unintended side effects and create code that is easier to reason about.
+
+    Pure functions are another key concept in functional programming. These are functions that do not rely on any external state and always produce the same output for a given input. They are side-effect free and enable code to be written in a declarative manner rather than an imperative one. By using pure functions, you can minimize the number of side effects in your program and create more predictable and testable code.
+
+    Higher-order functions are functions that can take other functions as their input or return functions as their output. They are useful for abstracting away complexity and can improve code reuse and maintainability.
+
+    Functional programming techniques like map, filter, and reduce can also be used to improve data handling. These techniques allow you to apply operations to collections of data without the need for explicit iteration. Moreover, when chaining these techniques, they can reflect complex transformations in a single line of code.
+
+    Currying and composition are two more techniques employed by functional programming, this time for event handling. Currying involves turning a function with multiple arguments into a series of functions with one argument. This simplifies event handling by allowing events with complex arguments to be handled more easily. Composition, on the other hand, involves chaining functions together to create more complex functionality. It enables developers to build complex systems out of small, reusable functions, improving code reuse and maintainability.
+
+    In summary, functional programming principles and techniques like immutability, pure functions, higher-order functions, map, filter, reduce, currying, and composition can be used to create more robust, maintainable, and readable code. They can help developers minimize unintended side effects, abstract away complexity, and improve code reuse and maintainability, all of which can make for a better development experience and stronger software products.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -968,6 +980,83 @@
 
 72. ### Use File-Based Routing instead of URL Routing
     Use File-Based Routing instead of URL Routing to make code simpler and more maintainable. It can also help to structure sub-routes better as within URL routing, it can create a scenario where to incorporate all the URLs can increase the length of the object and file.
+
+    File-based routing, also known as page-based routing, is an alternative to URL-based routing that simplifies the organization and management of web application routes. In file-based routing, each route is defined as a separate file, typically with a filename that matches the corresponding route's URL path. When a user navigates to a particular route, the server serves up the contents of the corresponding file.
+
+    One of the main benefits of file-based routing is that it makes web application code simpler and more maintainable. With file-based routing, routing is handled by the file system rather than by a routing configuration file. This approach eliminates the need for separate routing logic and makes the routing process more transparent and easier to understand.
+
+    File-based routing can also improve the structure of sub-routes by allowing them to be organized more clearly and logically. Within URL routing, as the number of routes grows, it can create a cumbersome object or file with excessive length. In contrast, file-based routing allows sub-routes to be organized within separate directories, making it easier to locate and modify specific routes.
+
+    Another benefit of file-based routing is that it can simplify the process of adding new routes or modifying existing ones. Instead of maintaining a routing configuration file, developers can simply add or modify files in the appropriate directories, greatly simplifying the process of managing routes.
+
+    When building web applications, routing is one of the fundamental components that enable users to navigate between different pages or resources. Two common approaches for routing in web applications are URL routing and file-based routing.
+
+    For example, let's say we're building a simple blogging application with the following routes:
+    - / (home page)
+    - /blog (blog page)
+    - /blog/post (single post page)
+
+    In URL routing, we may create a router that maps each of these routes to its corresponding function:
+    ```
+    app.get('/', (req, res) => {
+    // render home page
+    });
+
+    app.get('/blog', (req, res) => {
+    // render blog page
+    });
+
+    app.get('/blog/post', (req, res) => {
+    // render single post page
+    });
+    ```
+
+    However, in file-based routing, we may organize our code into separate files that correspond to each route:
+    ```
+    - src
+    - routes
+        - home.js
+        - blog.js
+        - post.js
+    ```
+
+    In `home.js`, we define the handling logic for the home page route:
+    ```
+    const express = require('express');
+    const router = express.Router();
+
+    router.get('/', (req, res) => {
+    // render home page
+    });
+
+    module.exports = router;
+    ```
+
+    In `blog.js`, we define the handling logic for the blog page route:
+    ```
+    const express = require('express');
+    const router = express.Router();
+
+    router.get('/', (req, res) => {
+    // render blog page
+    });
+
+    module.exports = router;
+    ```
+
+    In `post.js`, we define the handling logic for the single post page route:
+    ```
+    const express = require('express');
+    const router = express.Router();
+
+    router.get('/', (req, res) => {
+    // render single post page
+    });
+
+    module.exports = router;
+    ```
+
+    In summary, File-based routing offers a simpler, more organized alternative to URL-based routing that can help developers build maintainable applications with clear and logical routing structures. By breaking up routes into separate files, developers can better manage and modify routing logic and create a more transparent and easier-to-understand application routing process.
 
     **[⬆ Back to Top](#table-of-contents)**
 
