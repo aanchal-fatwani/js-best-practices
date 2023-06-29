@@ -203,7 +203,7 @@
 
 
 14. ### Comment as much as needed but not more
-    Use commenting to provide relevant information to other developers, but only when necessary. Avoid single line comments, and instead use the /* */ notation for comments.
+    Use commenting to provide relevant information to other developers, but only when necessary.
 
       **[⬆ Back to Top](#table-of-contents)**
 
